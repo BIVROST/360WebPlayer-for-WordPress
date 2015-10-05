@@ -57,9 +57,9 @@ function bivrost_player_shortcode($attrs, $content) {
 	
 	ob_start();
 	?>
-		<bivrost-player<?php foreach($attr as $k => $v):?> <?=$v?>="<?=$v?>"<?php endforeach?>>
+		<bivrost-player<?php foreach($attr as $k => $v):?> <?=$k?>="<?=$v?>"<?php endforeach?>>
 			<?php foreach($srcs as $src => $type): ?>
-			<bivrost-media url="<?=urlencode($src)?>"<?php if($type): ?> type="<?=$type?>"<?php endif ?>></bivrost-media>
+			<bivrost-media url="<?=$src?>"<?php if($type): ?> type="<?=$type?>"<?php endif ?>></bivrost-media>
 			<?php endforeach ?>
 		</bivrost-player>
 	<?php
