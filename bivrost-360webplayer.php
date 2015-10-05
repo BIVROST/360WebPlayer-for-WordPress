@@ -25,21 +25,34 @@ function bivrost_player_shortcode($attrs, $content) {
 		$srcs[$src]=$type;
 	};
 
-
 	$available_attrs=array(
 //		'url'
-//		'type'
+//		'type'		
 		'loop' => '/^(true|false)$/',
 		'autoplay' => '/^(true|false)$/',
 		'stereoscopy' => '/^(autodetect|mono|side-by-side|top-and-bottom|top-and-bottom-reversed)$/',
 		'projection' => '/^(equirectangular|cubemap|cubemap:.+)$/',
-		'source' => '/^(autodetect|video|picture)$/'
+		'source' => '/^(autodetect|video|picture)$/',
+		'theme' => '/^(default|spring|autumn|turquoise|winter)$/',
+		'width' => '/^(\d*.+$|$)/',
+		'height' => '/^(\d*.+$|$)/'
 	);
 	
 	if($attrs && isset($attrs['url'])) {
 		$srcs[$attrs['url']]=isset($srcs['type'])?$srcs['type']:"";
 		unset($attrs['url']);
 		unset($attrs['type']);
+	}
+	
+	$theme=null;
+	$width=null;
+	$height=null;
+	
+	foreach(array('theme', 'width', 'height') as $attrName) {
+		if($attrs && isset($attrs[$attrName])) {
+			$$attrName=$attrs[$attrName];
+			unset($attrs[$attrName]);
+		}
 	}
 	
 	$attr=array();
@@ -57,7 +70,19 @@ function bivrost_player_shortcode($attrs, $content) {
 	
 	ob_start();
 	?>
-		<bivrost-player<?php foreach($attr as $k => $v):?> <?=$k?>="<?=$v?>"<?php endforeach?>>
+		<bivrost-player<?php 
+				foreach($attr as $k => $v):
+					?> <?=$k?>="<?=$v?>"<?php 
+				endforeach;
+				
+				if($theme):
+					?>  class="bivrost-theme-<?=$theme?>"<?php 
+				endif;
+				
+				if($width || $height):
+					?> style="<?php if($width): ?>width:<?=$width?>; <?php endif ?><?php if($height): ?>width:<?=$height?>; <?php endif ?>"<?php
+				endif;
+			?>>
 			<?php foreach($srcs as $src => $type): ?>
 			<bivrost-media url="<?=$src?>"<?php if($type): ?> type="<?=$type?>"<?php endif ?>></bivrost-media>
 			<?php endforeach ?>
@@ -66,7 +91,6 @@ function bivrost_player_shortcode($attrs, $content) {
 	return ob_get_clean();
 }
 add_shortcode('bivrost-player', 'bivrost_player_shortcode');
-
 
 
 // tinymce integration

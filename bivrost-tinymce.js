@@ -50,7 +50,10 @@
 			autoplay: false,
 			source: "autodetect",
 			stereoscopy: "autodetect",
-			projection: "equirectangular"
+			projection: "equirectangular",
+			theme: "default",
+			width: "",
+			height: ""
 		};
 		
 		// http://stackoverflow.com/questions/24871792/tinymce-api-v4-windowmanager-open-what-widgets-can-i-configure-for-the-body-op
@@ -72,7 +75,19 @@
 				listbox_helper("source", "Source type", values.source || defaults.source, ["autodetect", "video", "picture"]),
 				listbox_helper("stereoscopy", "Stereoscopy type", values.stereoscopy || defaults.stereoscopy, ["autodetect", "mono", "side-by-side", "top-and-bottom", "top-and-bottom-reversed"]),
 				listbox_helper("projection", "Projection type", values.projection || defaults.projection, available_projections),
-//				listbox_helper("theme", "Theme", values.theme || "default"),
+				listbox_helper("theme", "Theme", values.theme || "default", ["default", "spring", "autumn", "turquoise", "winter"]),
+				{
+					type: "textbox",
+					name: "width",
+					label: "Widget width in css units (px, %, etc), leave empty for default",
+					value: values.width || ""
+				},
+				{
+					type: "textbox",
+					name: "height",
+					label: "Widget height in css units (px, %, etc), leave empty for default",
+					value: values.height || ""
+				},
 				{
 					type: "container",
 					label: "sources",
