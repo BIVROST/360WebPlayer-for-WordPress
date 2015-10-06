@@ -1,9 +1,30 @@
 <?php
 
-/*
-Plugin Name: BIVROST 360WebPlayer
-Version: 1.0
-*/
+/**
+ * @package BIVROST 360WebPlayer for WordPress
+ * @author Bivrost
+ * @license Custom opensource license: http://github.com/Bivrost/360WebPlayer/#License
+ * @link http://bivrost360.com
+ * @copyright (c) 2015, Bivrost sp. z o.o.
+ * 
+ * @wordpress-plugin
+ * Plugin Name: BIVROST 360WebPlayer
+ * Plugin URI: http://bivrost360.com
+ * Description: Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to show 360 videos and pictures on your blog or website.
+ * Version: 1.0
+ * Author: Bivrost
+ * Author URI: http://bivrost360.com
+ * Text Domain: bivrost
+ * Domain Path: /languages
+ * License:     Custom opensource license
+ * License URI: http://github.com/Bivrost/360WebPlayer/#License
+ * Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
+ * Requires at least: 4.2.0
+ * Tested up to: 4.3
+ */
+
+if(!function_exists('add_action'))
+	die("BIVROST 360WebPlayer for WordPress");
 
 function bivrost_enqueue_scripts() {
 	wp_register_script('bivrost-player', plugins_url('bivrost.js', __FILE__));
@@ -17,11 +38,9 @@ function bivrost_player_shortcode($attrs, $content) {
 	wp_enqueue_style('bivrost-player');
 	wp_enqueue_script('bivrost-player');
 	
-	// TODO: option for urlencode
-	
 	$srcs=array();
 	foreach(array_filter(array_map('trim', explode("\n", strip_tags ($content)))) as $srcAndType) {
-		@list($src, $type)=explode('#', $srcAndType);
+		list($src, $type)=explode('#', $srcAndType.'#');
 		$srcs[$src]=$type;
 	};
 
@@ -55,6 +74,7 @@ function bivrost_player_shortcode($attrs, $content) {
 		}
 	}
 	
+	$urlencode=false;
 	$attr=array();
 	if($attrs)
 		foreach($attrs as $k => $v) {

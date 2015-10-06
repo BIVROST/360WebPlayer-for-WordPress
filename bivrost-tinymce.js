@@ -23,7 +23,6 @@
 	
 	
 	function shortcode_editor(shortcode, on_submit) {
-		console.log("shortcode_editor", arguments);
 		
 		function listbox_helper(name, label, value, values) {
 			return {
@@ -79,20 +78,20 @@
 				{
 					type: "textbox",
 					name: "width",
-					label: "Widget width in css units (px, %, etc), leave empty for default",
+					label: "Widget width in css units (px, %, etc),\n leave empty for default",
 					value: values.width || ""
 				},
 				{
 					type: "textbox",
 					name: "height",
-					label: "Widget height in css units (px, %, etc), leave empty for default",
+					label: "Widget height in css units (px, %, etc),\n leave empty for default",
 					value: values.height || ""
 				},
 				{
 					type: "container",
 					label: "sources",
 					html:  "<div id=\""+id+"\"></div>",
-					minHeight: 200
+					minHeight: 150
 				},
 				{	
 					type: "button",
@@ -109,9 +108,7 @@
 							shortcode.attrs.named[key]=values.data[key];
 					}
 				
-				console.log("VALUES", values);
-				console.log("SHORTCODE", shortcode);
-				shortcode.content=srcs.join("<br/>\n");
+				shortcode.content="\n"+srcs.join("<br/>\n")+"\n";
 				on_submit();
 			}
 		} );
@@ -122,38 +119,58 @@
 			media=media.parentNode.parentNode.parentNode.parentNode;
 		
 		function reset_srcs() {
-			media.innerHTML="";
+			media.innerHTML="<p>"+ (srcs.length 
+				? "360 video or picture sources:"
+				: "No 360 video or picture sources found. Add them using the 'add source' button"
+			)+"</p>\n";
 			var ul=document.createElement("ul");
 			media.appendChild(ul);
+			media.style.overflow="auto";
+			
+			// unique
+			var usedSrc={};
+			srcs=srcs.filter(function(src) {
+				if(usedSrc[src])
+					return false;
+				usedSrc[src]=true;
+				return true;
+			});
+			
+			// 
 			srcs.forEach(function(src) {
 				var li=document.createElement("li");
+				
 				var span=document.createElement("span");
-				ul.appendChild(li);
+				span.style.verticalAlign="middle";
+				span.style.lineHeight="30px";
 				span.appendChild(document.createTextNode(" • "+src.split("/").pop()));
 				span.className="mce-container";
+				
 				var remove=document.createElement("button");
-				var removeHolder=document.createElement("span");
-				removeHolder.className="mce-btn";
 				remove.appendChild(document.createTextNode("remove"));
 				remove.addEventListener("click", function() {
 					srcs=srcs.filter(function(s) { return s !== src; } );
 					reset_srcs();
 				});
+
+				var removeHolder=document.createElement("span");
+				removeHolder.className="mce-btn";
 				removeHolder.style.float="right";
 				removeHolder.appendChild(remove);
+				
 				li.appendChild(removeHolder);
 				li.appendChild(span);
 				li.style.break="both";
-				li.style.marginBottom="1em";
+				li.style.marginTop="0.5em";
+				
+				ul.appendChild(li);
 			});
 			
 		}
 		
-		console.log("BUTTON", media.parentNode.parentNode.querySelector(".button-add"), media.parentNode.parentNode);
 		var button=media.parentNode.parentNode.querySelector(".mce-add-button button");		
 		button.addEventListener("click", function() {
 			get_media(function(m) {
-				console.log("MEDIA", m);
 				m.forEach(function(mm) {
 					srcs.push(mm.attributes.url);
 				});
@@ -175,7 +192,6 @@
 		shortcode: "bivrost-player",
 
 		initialize: function() {
-//			this.render("<b>SHORTCODE</b>="+this.shortcode.string());
 			this.render("<img src=\""+url_+"/preview.png\">");
 		},
 		
@@ -193,9 +209,8 @@
 			url_=url;
 			editor.addButton("bivrost_button", {
 				title: "BIVROST 360WebPlayer",
-				image: url+"/bivrost-20x20.png",
-				onclick: function() { 
-					console.log("arguments", arguments);
+				image: url+"/bivrost-button.png",
+				onclick: function() {
 					var shortcode=new wp.shortcode({tag: "bivrost-player"});
 					shortcode_editor(shortcode, function() { editor.insertContent(shortcode.string()); }); 
 				}
