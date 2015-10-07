@@ -12,6 +12,8 @@ Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple
 
 == Description ==
 
+Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to show 360 videos and pictures on your blog or website.
+
 = Features = 
 
 * Easy visual setup
@@ -183,9 +185,9 @@ Some tips:
 
 We try to make the player run on as many platforms as possible, but we still have far from 100% coverage. Major unsupported platforms are:
 
-* iOS - only pictures work, videos are distorted and without a user interface
-* Windows Phone - only pictures work, videos are black
-* GearVR - currently no way to run a web browser
+* iOS - only pictures work, videos are distorted and without a user interface, will be fixed.
+* Windows Phone - only pictures work, videos are black, possibly will be fixed.
+* GearVR - currently no way to run a web browser, no plans to fix at this moment.
 
 If you're experiencing problems with any other recent platform, please let us know.
 
@@ -194,7 +196,26 @@ If you're experiencing problems with any other recent platform, please let us kn
 
 Check if your device supports this kind of video (play it in the browser directly). Some devices support only up to 1920x1080 resolution and only mp4/h264 or webm. Look at the [Media Preparation Guide][80] for details on how to make portable video.
 
+Videos or pictures have to be served from the same domain or provide [Cross-Origin Resource Sharing][cors]
+
+[cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+
+
+= Seeking does not work =
+
+Either your webserver doesn't support [Content-Range][content-range] or your video file has issues. Common server not supporting Content-Range is the builtin PHP development webserver.
+
+[content-range]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16
+
+
+
+
+= Where can I submit feature requests or bug reports? Where can I find the unminified version? =
+
+Please send bugs and feature requests to our GitHub at http://github.com/Bivrost/360WebPlayer the sources are located there too. Thanks.
+
 [80]: http://github.com/Bivrost/360WebPlayer/#Media%20preparation%20guide
+
 
 
 
@@ -207,8 +228,8 @@ There are two separate licenses to choose from:
 
 If you want to remove or replace our branding or are unsure about which license applies to you, please [contact us for help and additional licensing options][94].
 
-[92]: http://github.com/Bivrost/360WebPlayer/LICENSE-free.txt
-[93]: http://github.com/Bivrost/360WebPlayer/LICENSE-paid.txt
+[92]: http://github.com/Bivrost/360WebPlayer/LICENSE-free.md
+[93]: http://github.com/Bivrost/360WebPlayer/LICENSE-paid.md
 [94]: mailto:TODO sales@bivrost360.com
 
 == Screenshots ==
@@ -221,5 +242,10 @@ If you want to remove or replace our branding or are unsure about which license 
 == Changelog ==
 
 = 1.0 =
+
+Initial release
+
+
+== Upgrade Notice ==
 
 Initial release

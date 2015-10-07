@@ -995,6 +995,7 @@
   transform-origin: 100% 0%;
   filter: grayscale(0);
   opacity: 1;
+  cursor: pointer;
 }
 .bivrost-player.hide-ui .bivrost-logo {
   -webkit-transform: scale(0.75);
