@@ -59,6 +59,20 @@ Configure the player using attributes in the shortcode. Look at the next section
 
 = Available options =
 
+*	`theme`: what skin to use? You have 5 skins available:
+	* "default" - black and blue
+	* "spring" - black and green
+	* "autumn" - orange and red with a leaves background
+	* "winter" - white and blue
+	* "turquoise" - blue and violet
+	optional, default: "default"
+
+*	`width`: force the width of the player. By default the player fits to the width of available width and a 4:3 aspect, but you can override this.
+	Provide a value in css units, ex. `500px` or `75%`.
+
+*	`height`: force the height of the player. By default the height is derived from the width and with a 4:3 aspect.
+	Provide a value in css units, ex. `500px` or `75%`.
+
 *	`loop`: should the media loop? 
 	Allowed values: "true", "false";  
 	optional, default: "false".
