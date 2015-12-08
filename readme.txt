@@ -2,7 +2,7 @@
 Contributors: chanibal
 Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
 Requires at least: 4.2.0
-Tested up to: 4.3.1
+Tested up to: 4.5
 Stable tag: trunk
 License: Custom opensource license
 License URI: http://github.com/Bivrost/360WebPlayer/#License
@@ -13,6 +13,8 @@ Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple
 == Description ==
 
 Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to show 360 videos and pictures on your blog or website.
+
+This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress way.
 
 = Features = 
 
@@ -61,12 +63,10 @@ Configure the player using attributes in the shortcode. Look at the next section
 
 = Available options =
 
-*	`theme`: what skin to use? You have 5 skins available:
+*	`theme`: what skin to use? You have 3 skins available:
 	* "default" - black and blue
 	* "spring" - black and green
-	* "autumn" - orange and red with a leaves background
-	* "winter" - white and blue
-	* "turquoise" - blue and violet
+	* "autumn" - black and red
 	optional, default: "default"
 
 *	`width`: force the width of the player. By default the player fits to the width of available width and a 4:3 aspect, but you can override this.
@@ -131,7 +131,7 @@ Configure the player using attributes in the shortcode. Look at the next section
 
 = Commercial Use =
 
-Please note, the license allows only for non-commercial use of the player. Commercial use requires you to acquire a license, please see License for details.
+Please note, the player's free license allows only for non-commercial use of the player. Commercial use requires you to acquire a license, please see License for details.
 
 
 == Installation ==
@@ -230,7 +230,7 @@ If you want to remove or replace our branding or are unsure about which license 
 
 [92]: http://github.com/Bivrost/360WebPlayer/LICENSE-free.md
 [93]: http://github.com/Bivrost/360WebPlayer/LICENSE-paid.md
-[94]: mailto:TODO sales@bivrost360.com
+[94]: https://tools.bivrost360.com/payment
 
 == Screenshots ==
 

@@ -74,7 +74,7 @@
 				listbox_helper("source", "Source type", values.source || defaults.source, ["autodetect", "video", "picture"]),
 				listbox_helper("stereoscopy", "Stereoscopy type", values.stereoscopy || defaults.stereoscopy, ["autodetect", "mono", "side-by-side", "top-and-bottom", "top-and-bottom-reversed"]),
 				listbox_helper("projection", "Projection type", values.projection || defaults.projection, available_projections),
-				listbox_helper("theme", "Theme", values.theme || "default", ["default", "spring", "autumn", "turquoise", "winter"]),
+				listbox_helper("theme", "Theme", values.theme || "default", ["default", "spring", "autumn"]),
 				{
 					type: "textbox",
 					name: "width",

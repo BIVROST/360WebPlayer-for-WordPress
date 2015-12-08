@@ -39,10 +39,23 @@ function bivrost_player_shortcode($attrs, $content) {
 	wp_enqueue_script('bivrost-player');
 	
 	$srcs=array();
-	foreach(array_filter(array_map('trim', explode("\n", strip_tags ($content)))) as $srcAndType) {
-		list($src, $type)=explode('#', $srcAndType.'#');
-		$srcs[$src]=$type;
-	};
+
+	$shortcode_matches=array();
+	preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $shortcode_matches, PREG_SET_ORDER );
+	foreach($shortcode_matches as $match) {
+		$tag=$match[2];
+		if($tag !== 'video')
+			continue;
+		$shortcode=shortcode_parse_atts($match[0]);
+		if(isset($shortcode["src"]))
+			$srcs[$shortcode["src"]]="";
+	}
+	
+	if(empty($srcs))
+		foreach(array_filter(array_map('trim', explode("\n", strip_shortcodes(strip_tags ($content))))) as $srcAndType) {
+			list($src, $type)=explode('#', $srcAndType.'#');
+			$srcs[$src]=$type;
+		}
 
 	$available_attrs=array(
 //		'url'
@@ -52,7 +65,7 @@ function bivrost_player_shortcode($attrs, $content) {
 		'stereoscopy' => '/^(autodetect|mono|side-by-side|top-and-bottom|top-and-bottom-reversed)$/',
 		'projection' => '/^(equirectangular|cubemap|cubemap:.+)$/',
 		'source' => '/^(autodetect|video|picture)$/',
-		'theme' => '/^(default|spring|autumn|turquoise|winter)$/',
+		'theme' => '/^(default|spring|autumn)$/',
 		'width' => '/^(\d*.+$|$)/',
 		'height' => '/^(\d*.+$|$)/'
 	);
