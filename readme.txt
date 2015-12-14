@@ -25,19 +25,22 @@ This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress
 * Works on major browsers
 * Possible to embed more than one on the same page
 * Themable
-* Supports mono and stereoscopic pictures and video
-* [WebVR][11] (MozVR) support - working with Oculus Rift DK1, DK2, cardboard and more
-* Lots of configuration options
-* Supports viewing media in native players (also [supplied by Bivrost][1])
+* Supports mono and stereoscopic pictures and video with equirectangular and cubemap projection
+* [WebVR][webvr] (MozVR) support - working with Oculus Rift DK1, DK2, cardboard and more
+* Supports viewing media in native players (also [supplied by Bivrost][bivrost])
 * Accepting feature requests - tell us what you want in the player!
 
 
-[1]: http://bivrost360.com
-[11]: http://webvr.info/
+[bivrost]: http://bivrost360.com
+[webvr]: http://webvr.info/
 
 
 
 = Usage in visual editor =
+
+For a video see [this YouTube video tutorial][yt].
+
+[yt]: https://youtu.be/_xYJIyk0uB8
 
 To use the plugin in visual mode, open up a post or page editor, and simply press the BIVROST 360WebPlayer button. You will look at a window to configure the player and select videos or pictures that you want to display. 
 
@@ -161,12 +164,11 @@ After instalation, you will have a new button in the WYSYWIG editor. Alternative
 
 At the time of writing, WebVR is supported by Firefox Nightly with an extension. It supports Oculus Rift and (allegedly) other headsets like HTC Vive.
 
-See instructions at [MozVR][81] and [WebVR.info][82] for how to setup your browser.
+See instructions at [MozVR][mozvr] and [WebVR.info][webvr] for how to setup your browser.
 
 When you have a working setup, press ` V ` or the "eye" button to go to VR mode.
 
-[81]: http://mozvr.com/downloads/
-[82]: http://webvr.info/
+[mozvr]: http://mozvr.com/downloads/
 
 
 = Virtual Reality in mobile with Google Cardboard =
@@ -212,9 +214,9 @@ Either your webserver doesn't support [Content-Range][content-range] or your vid
 
 = Where can I submit feature requests or bug reports? Where can I find the unminified version? =
 
-Please send bugs and feature requests to our GitHub at http://github.com/Bivrost/360WebPlayer the sources are located there too. Thanks.
+Please send bugs and feature requests to our GitHub at [http://github.com/Bivrost/360WebPlayer][github] the sources are located there too. Thanks.
 
-[80]: http://github.com/Bivrost/360WebPlayer/#Media%20preparation%20guide
+[github]: http://github.com/Bivrost/360WebPlayer/#Media%20preparation%20guide
 
 
 
@@ -223,14 +225,14 @@ Please send bugs and feature requests to our GitHub at http://github.com/Bivrost
 
 There are two separate licenses to choose from:
 
-1. [The free license][92] - use for web sites that are non commercial
-2. [The paid license][93] - use for commercial web sites, one license per domain (contact [sales][94] for payment).
+1. [The free license][license-free] - use for web sites that are non commercial
+2. [The paid license][license-paid] - use for commercial web sites, one license per domain ([contact sales][payment] for payment).
 
-If you want to remove or replace our branding or are unsure about which license applies to you, please [contact us for help and additional licensing options][94].
+If you want to remove or replace our branding or are unsure about which license applies to you, please [contact us for help and additional licensing options][bivrost].
 
-[92]: http://github.com/Bivrost/360WebPlayer/LICENSE-free.md
-[93]: http://github.com/Bivrost/360WebPlayer/LICENSE-paid.md
-[94]: https://tools.bivrost360.com/payment
+[license-free]: http://github.com/Bivrost/360WebPlayer/LICENSE-free.md
+[license-paid]: http://github.com/Bivrost/360WebPlayer/LICENSE-paid.md
+[payment]: https://tools.bivrost360.com/payment
 
 == Screenshots ==
 
@@ -241,7 +243,7 @@ If you want to remove or replace our branding or are unsure about which license 
 
 == Changelog ==
 
-= 1.0 =
+= 1.0 (TODO: data wydania) =
 
 Initial release
 
