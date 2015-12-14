@@ -25,7 +25,7 @@ This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress
 * Works on major browsers
 * Possible to embed more than one on the same page
 * Themable
-* Supports mono and stereoscopic pictures and video
+* Supports mono and stereoscopic pictures and video with equirectangular and cubemap projection
 * [WebVR][11] (MozVR) support - working with Oculus Rift DK1, DK2, cardboard and more
 * Lots of configuration options
 * Supports viewing media in native players (also [supplied by Bivrost][1])
