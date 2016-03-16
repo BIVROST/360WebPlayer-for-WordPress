@@ -1,8 +1,7 @@
 BIVROST 360WebPlayer for WordPress
 ==================================
 
-Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to 
-show 360 videos and pictures on your blog or website.
+The BIVROST 360WebPlayer is the easiest way to stream 360 videos and pictures on your website or blog.
 
 This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress way.
 
@@ -12,18 +11,17 @@ This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress
 Features
 --------
 
-* Easy visual setup
-* Simple for the end user
-* Works on both desktop and mobile
-* Price includes the license for commercial usage of the plugin
-* [Open Source][github]
-* Works on major browsers
-* Possible to embed more than one on the same page
-* Themable
-* Supports mono and stereoscopic pictures and video with equirectangular and cubemap projection
-* [WebVR][webvr] (MozVR) support - working with Oculus Rift DK1, DK2, cardboard and more
-* Supports viewing media in native players (also [supplied by Bivrost][bivrost])
-* Accepting feature requests - tell us what you want in the player!
+* Fast visual setup.
+* Easy to use for the end user.
+* Both desktop and mobile.
+* Free for personal use (see [license][license-free] for details).
+* Works on all major browsers.
+* Possible to embed more than one player on the same page.
+* Mono and stereoscopic video and pictures.
+* HTTP Live Streaming (HLS).
+* [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and more.
+* Supports watching content in external native players (also [supplied by Bivrost][bivrost]).
+* We want to hear your feedback and ideas for new features, to make it even better.
 
 [bivrost]: http://bivrost360.com
 [webvr]: http://webvr.info/

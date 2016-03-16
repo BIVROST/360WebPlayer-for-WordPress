@@ -11,10 +11,9 @@ wordpress.html: readme.txt screenshot-* Makefile
 				$$0 ~ "Screenshots" { ss=1 }																			\
 				(p && ss) {																									\
 					out="<img src=\"screenshot-" ss ".png\" alt=\"\" /><p class=\"figure\">";			\
-					sub(/<p>/, out, $$0);																				\
+					if(sub(/<p>/, out, $$0)) ss=ss+1;																\
 					print $$0;																								\
 				}																												\
-				(p && ss && $$0 ~ "<p>") { ss=ss+1 }																\
 				(p && !ss) { print }																						\
 		 '																														\
 		 > wordpress.html

@@ -1,4 +1,4 @@
-=== BIVROST 360WebPlayer ===
+=== BIVROST 360WebPlayer for WordPress ===
 Contributors: chanibal
 Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
 Requires at least: 4.2.0
@@ -7,28 +7,30 @@ Stable tag: trunk
 License: Custom opensource license
 License URI: http://github.com/Bivrost/360WebPlayer/#License
 
-Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to show 360 videos and pictures on your blog or website.
+The BIVROST 360WebPlayer is the easiest way to stream 360 videos and pictures on your website or blog.
 
 
 == Description ==
 
-Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to show 360 videos and pictures on your blog or website.
+The BIVROST 360WebPlayer is the easiest way to stream 360 videos and pictures on your website or blog.
 
 This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress way.
 
 = Features = 
 
-* Easy visual setup
-* Simple for the end user
-* Works on both desktop and mobile
-* Free for personal use (see the license for details)
-* Works on major browsers
-* Possible to embed more than one on the same page
-* Themable
-* Supports mono and stereoscopic pictures and video with equirectangular and cubemap projection
-* [WebVR][webvr] (MozVR) support - working with Oculus Rift DK1, DK2, cardboard and more
-* Supports viewing media in native players (also [supplied by Bivrost][bivrost])
-* Accepting feature requests - tell us what you want in the player!
+
+* Fast visual setup.
+* Easy to use for the end user.
+* Both desktop and mobile.
+* Free for personal use (see [license][license-free] for details).
+* Works on all major browsers.
+* Possible to embed more than one player on the same page.
+* Mono and stereoscopic video and pictures.
+* HTTP Live Streaming (HLS).
+* [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and more.
+* Supports watching content in external native players (also [supplied by Bivrost][bivrost]).
+* We want to hear your feedback and ideas for new features, to make it even better.
+
 
 
 [bivrost]: http://bivrost360.com
@@ -78,40 +80,40 @@ Configure the player using attributes in the shortcode. Look at the next section
 *	`height`: force the height of the player. By default the height is derived from the width and with a 4:3 aspect.
 	Provide a value in css units, ex. `500px` or `75%`.
 
-*	`loop`: should the media loop? 
+*	`loop`: allows the video to loop 
 	Allowed values: "true", "false";  
 	optional, default: "false".
 
-*	`autoplay`: should the media be played on load? This might fail on some platforms (android).
+*	`autoplay`: should the content play automatically? This might not work with some platforms.
 	Allowed values: "true", "false";  
 	optional, default: "true".
 
-*	`stereoscopy`: what kind of stereoscopy is this media in?  
+*	`stereoscopy`: which form of stereoscopy is used?  
 	Allowed values:  
 	
-	* "autodetect" - guess by filename tags and media ratio (see: [Media preparation guide][80]), 
+	* "autodetect" - detects by filename tags and media ratio (see: Media preparation guide), 
 	* "mono" - whole image used,
-	* "side-by-side" - image for left eye is on the left half, and right on the right half of the media,
-	* "top-and-bottom" - the left eye is the top half of the image, the right one in the bottom half,
- 	* "top-and-bottom-reversed" - the left eye is the bottom half of the image, the right one in the top half;
+	* "side-by-side" - the image for left eye is on the left half, and right on the right half of the media,
+	* "top-and-bottom" - the left eye is the top half of the image, the right one on the bottom half,
+ 	* "top-and-bottom-reversed" - the left eye is the bottom half of the image, the right one on the top half;
 
 	optional, default: "autodetect".
 
-*	`source`: is this a video or picture?
-	Allowed values: "video", "picture", "autodetect";
+*	`source`:  is it a video or picture?
+	Allowed values: "video", "picture", "stream-hls", "stream-dash", "autodetect";
 	optional, default: "autodetect"
 	
-*	`projection`: reserved for future use; what is the projection (mapping from 2d to 3d) of the media?
+*	``projection`: how is the media projected (mapping from 2d to 3d)?
 	Allowed value: "equirectangular", "cubemap", "cubemap:configuration...";
 	optional, default: "equirectangular".
-	Cubemap can be configured with cubemap type. There are a few presets defining the order of faces: 
+	Cubemap can be configured through several cubemap types. There are a few presets defining the order: 
 
-	* "horizontal" (default) - all sides of the cube are in one line in the order; left, right, down, up, back, front. OBRX uses this format.
-	* "two-by-three" - sides are in two rows: left, right, down and up, bottom, front. Facebook 360 videos use this format.
-	* "facebook" - the same as in two-by-three, but rotated and each face is cropped by 1%.
-	* "horizontal-cross" - sides are in a cross with bottom, right, front and left in the middle row; up is in the top row and down in the bottom. 
+	* "horizontal" (default) - all sides of the cube are in one line in the following order; left, right, down, up, back, front. OBRX uses this format.
+	* "two-by-three" - all sides are in two rows: left, right, down and up, bottom, front. Facebook 360 videos use this format.
+	* "facebook" - the same as two-by-three, but rotated, and each face is cropped by 1%.
+	* "horizontal-cross" - all sides are in a cross with bottom, right, front and left in the middle row; up is in the top row and down in the bottom. 
 	* "vertical-cross" - up is in the first row, bottom, right and front in the second, left in the third and down in the fourth. ATI CubeMapGen uses this format.
-	* custom - advanced and available only in shortcode mode, please use presets if possible; you can specify any alignment with a simple description string. The order string is an 2d array of face names in the order they appear on the texture. The rows are separated by "," and the faces are one letter acronyms (also accepts capital letters):
+	* custom - advanced, please use presets if possible; you can specify any alignment with a description string. The string is an 2d array of face names in the order they appear on the texture. The rows are separated by "," and the faces are one letter acronyms (accepts capital letters):
 
 		*  "f" - front
 		*  "b" - back
@@ -121,15 +123,17 @@ Configure the player using attributes in the shortcode. Look at the next section
 		*  "d" - down
 		*  "-" - unused space
 
-		Each face can be supplied with a rotation with `*x` where x is a number from 0 to 3.
+	Each face can be rotated with `*x`.  x is a number from 0 to 3. For example `r*1` is right rotated 90 degrees clockwise.
 
-		Additionally two optional modifiers are supported at the end of the string:
+	There are optional modifiers at the end of the string:
 
-		*  ">90" - rotate clockwise by x degrees (90 in example)
-		*  "<72" - rotate counter clockwise by x degrees (72 in example)
-		*  "+0.01" - crop faces by amount (prevents visible edges)
+	*  ">90" - rotate the whole cube clockwise by 90 degrees
+	*  "<72" - rotate the whole cube counter clockwise by 72 degrees
+	*  "+0.01" - crop faces by 0.01 (prevents visible edges)
 
-		Example: `-u--,blfr,-d*2-->90+0.002`
+	Example: `-u--,blfr,-d*2-->90+0.002`
+	
+	Please note that with cubemaps, seams can be visible due to texture filtering - this is most visible on horizontal and vertical crosses. It's best you fix them on pictures by duplicating a border into the unused part of the image. The 1% zoom with Facebook is to prevent this from happening.
 
 
 = Commercial Use =
@@ -151,61 +155,63 @@ After instalation, you will have a new button in the WYSYWIG editor. Alternative
 
 = Available keyboard shortcuts =
 
-* ` ↑ ` ` → ` ` ↓ ` ` ← ` - look around
-* ` space ` - pause/play
-* ` F ` or doubleclick movie - fullscreen
-* ` V ` - enter/toggle VR mode
- ` escape ` - exit fullscreen/VR mode
-* ` [ `, ` ] ` - scroll movie by 5 seconds
-* ` + `, ` - ` - zoom in/out (not available in VR mode)
+* ` ↑ ` ` → ` ` ↓ ` ` ← ` - look around.
+* ` space ` - pause/play.
+* ` F ` or double click player - full-screen.
+* ` V ` - enter/toggle VR mode.
+ ` escape ` - exit full-screen/VR mode.
+* ` [ `, ` ] ` - scroll movie by 5 seconds, forwards or backwards.
+* ` + `, ` - ` - zoom in/out (not available in VR mode).
 
 
-= Virtual Reality on the desktop with WebVR =
+= Virtual Reality on desktop with WebVR =
 
-At the time of writing, WebVR is supported by Firefox Nightly with an extension. It supports Oculus Rift and (allegedly) other headsets like HTC Vive.
+At the time of writing, WebVR is supported by Firefox Nightly. It supports Oculus Rift and other headsets like HTC Vive.
 
-See instructions at [MozVR][mozvr] and [WebVR.info][webvr] for how to setup your browser.
-
-When you have a working setup, press ` V ` or the "eye" button to go to VR mode.
+When you have a VR headset, press ` V ` or the VR button to go to VR mode.
 
 [mozvr]: http://mozvr.com/downloads/
+[webvr]: http://webvr.info/
 
 
-= Virtual Reality in mobile with Google Cardboard =
+= Virtual Reality on mobile with Google Cardboard =
 
-It is possible to use the Bivrost 360Player with Google Cardboard and it's many clones. Just press the "eye" button to go to VR mode.
+You can use the Bivrost 360Player with Google Cardboard and its many clones. Just press the "eye" button to go to VR mode.
 
 Some tips:
 
-* Be sure to enable screen rotation on your device.
-* If you have a NFC tag in your cardboard it might be a good idea to disable NFC in your phone as it will run the cardboard app instead of allowing you to use a browser.
-* Some phones lack a gyroscope, if you have problems looking left and right, but looking up and down works this means that your phone manufacturer did not install one. The phone tries to compensate this with a compass (magnetometer), but the results are far from good.
+* If you have a NFC tag in your Cardboard we advice you to disable NFC in your phone as it might run the cardboard app and turn off your browser.
+* Not all phones have a gyroscope. If you have problems looking left and right, but up and down works, your phone does not have one. Instead your phone has a magnetometer, which does not work well with VR. Removing the magnet from the Cardboard improves the experience in this situation.
 * Consider setting a longer time for screen timeout.
 
 
 = Platform availability =
 
-We try to make the player run on as many platforms as possible, but we still have far from 100% coverage. Major unsupported platforms are:
+We try to make the player run on as many platforms as possible. 
 
-* iOS - only pictures work, videos are distorted and without a user interface, will be fixed.
-* Windows Phone - only pictures work, videos are black, possibly will be fixed.
-* GearVR - currently no way to run a web browser, no plans to fix at this moment.
+Currently unsupported platforms are:
 
-If you're experiencing problems with any other recent platform, please let us know.
+* iOS
+* Windows Phone
+* GearVR
+
+If you're experiencing problems with other recent platforms, please let us know.
 
 
-= Video does not work or has issues =
+= Video does not work =
 
-Check if your device supports this kind of video (play it in the browser directly). Some devices support only up to 1920x1080 resolution and only mp4/h264 or webm. Look at the [Media Preparation Guide][80] for details on how to make portable video.
+Check if your device supports this kind of video by playing it directly in the browser. Some devices support only up to 1920x1080 resolution.
 
-Videos or pictures have to be served from the same domain or provide [Cross-Origin Resource Sharing][cors]
+Videos or pictures have to be served from the same domain or provide [Cross-Origin Resource Sharing][cors]. Some browsers do not support CORS well.
 
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+
+Do not test from your local filesystem (the `file:///` protocol). You have to have a working webserver for the plugin to work.
 
 
 = Seeking does not work =
 
-Either your webserver doesn't support [Content-Range][content-range] or your video file has issues. Common server not supporting Content-Range is the builtin PHP development webserver.
+Either your webserver doesn't support [Content-Range][content-range] or there are issues with the video file. Some web servers do not have Content-Range support, for example the PHP built-in web server.
 
 [content-range]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16
 
@@ -214,10 +220,19 @@ Either your webserver doesn't support [Content-Range][content-range] or your vid
 
 = Where can I submit feature requests or bug reports? Where can I find the unminified version? =
 
-Please send bugs and feature requests to our GitHub at [http://github.com/Bivrost/360WebPlayer][github] the sources are located there too. Thanks.
+Please send bugs and feature requests to our [GitHub][github]. The sources are located there too. Thanks a lot in advance for any and all feedback.
 
-[github]: http://github.com/Bivrost/360WebPlayer/#Media%20preparation%20guide
+[github]: http://github.com/Bivrost/360WebPlayer
 
+
+
+= Standalone players =
+
+Although browsers are the most accessible platforms, they are not all fully ready for VR - that is why we created a whole family of video players.
+
+The BIVROST 360WebPlayer has a button that allows online content to be run in a native player. This enhances performance and gives the user a better experience than viewing the content straight from the browser. If the user does not have the player yet, he or she can download it through a pop-up.
+
+The standalone player supports VR headsets, less latency, and better frame rates.
 
 
 
@@ -228,11 +243,13 @@ There are two separate licenses to choose from:
 1. [The free license][license-free] - use for web sites that are non commercial
 2. [The paid license][license-paid] - use for commercial web sites, one license per domain ([contact sales][payment] for payment).
 
-If you want to remove or replace our branding or are unsure about which license applies to you, please [contact us for help and additional licensing options][bivrost].
+If you want to remove or replace our branding, are unsure about which license applies to you, please [contact us for help and additional licensing options][email-sales].
 
+[email-sales]: mailto:contact@bivrost360.com
 [license-free]: http://github.com/Bivrost/360WebPlayer/LICENSE-free.md
 [license-paid]: http://github.com/Bivrost/360WebPlayer/LICENSE-paid.md
-[payment]: https://tools.bivrost360.com/payment
+
+
 
 == Screenshots ==
 
@@ -243,7 +260,7 @@ If you want to remove or replace our branding or are unsure about which license 
 
 == Changelog ==
 
-= 1.0 (TODO: data wydania) =
+= 1.0 (TODO: date) =
 
 Initial release
 
@@ -251,3 +268,12 @@ Initial release
 == Upgrade Notice ==
 
 Initial release
+
+
+== Third party libraries ==
+
+The Bivrost Web Player uses third party libraries:
+
+* [THREE.js][threejs] (MIT license)
+
+[threejs]: http://threejs.org
