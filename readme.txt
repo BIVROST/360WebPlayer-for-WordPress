@@ -26,7 +26,6 @@ Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPl
 * HTTP Live Streaming (HLS).
 * [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and many more.
 * Supports watching content in an external native player (also [supplied by Bivrost][bivrost]).
-
 * If there is anything you miss in our player then let us know.
 
 [bivrost]: http://bivrost360.com

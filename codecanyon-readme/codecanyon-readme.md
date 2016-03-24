@@ -3,7 +3,7 @@ BIVROST 360WebPlayer for WordPress
 
 Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPlayer Plugin.
 
-![360WebPlayer for desktop and mobile](codecanyon-readme/README-player.png) (HUH?)
+![360WebPlayer for desktop and mobile](codecanyon-readme/README-player.png)
 
 
 Features
@@ -31,7 +31,7 @@ Installation
 
 Add the BIVROST 360WebPlayer plugin using the built-in plugin installer:
 
-1. Go to `Plugins > Add New > Send plugin` and upload the plugin file
+1. Go to `Plugins > Add New > Send plugin` and upload the plugin file (zip)
 2. Go to `Plugins > Installed` and enable the plugin
 
 After installation, you will have a new button in the WYSYWIG editor. There is a also a [bivrost-player] shortcode available.
