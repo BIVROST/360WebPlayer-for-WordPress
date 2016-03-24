@@ -12,79 +12,75 @@ The BIVROST 360WebPlayer is the easiest way to stream 360 videos and pictures on
 
 == Description ==
 
-The BIVROST 360WebPlayer is the easiest way to stream 360 videos and pictures on your website or blog.
-
-This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress way.
+Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPlayer Plugin.
 
 = Features = 
 
 
-* Fast visual setup.
-* Easy to use for the end user.
-* Both desktop and mobile.
+* Fast setup.
+* Easy to use.
+* Desktop and mobile friendly.
 * Free for personal use (see [license][license-free] for details).
 * Works on all major browsers.
-* Possible to embed more than one player on the same page.
-* Mono and stereoscopic video and pictures.
+* Supports Mono and stereoscopic videos and pictures.
 * HTTP Live Streaming (HLS).
-* [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and more.
-* Supports watching content in external native players (also [supplied by Bivrost][bivrost]).
-* We want to hear your feedback and ideas for new features, to make it even better.
+* [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and many more.
+* Supports watching content in an external native player (also [supplied by Bivrost][bivrost]).
 
-
+* If there is anything you miss in our player then let us know.
 
 [bivrost]: http://bivrost360.com
 [webvr]: http://webvr.info/
 
 
 
-= Usage in visual editor =
+= Visual Editor =
 
-For a video see [this YouTube video tutorial][yt].
+For a tutorial see [this YouTube video][yt].
 
 [yt]: https://youtu.be/_xYJIyk0uB8
 
-To use the plugin in visual mode, open up a post or page editor, and simply press the BIVROST 360WebPlayer button. You will look at a window to configure the player and select videos or pictures that you want to display. 
+Open the post or page editor and press the BIVROST 360WebPlayer button. Now you can configure the player and select the videos or pictures you want to display. 
 
-To add videos press the "add source" button, you can add more than one video at once using the shift, opt or control button. For best results add both a webm/vp6 and a mp4/h264.
+To add videos press the "add source" button. You can add more than one video at once using the shift, opt or control button. For best results add both a webm/vp6 and a mp4/h264 version.
 
-After you save your configuration, you will see a placeholder for the player. Press "preview changes" or publish the page to see the player in action.
+After you save your settings, you will see a placeholder for the player. Press "preview changes" or publish the page to see the player in action.
 
-To edit your player, just click it and press the "edit" icon on top of it - just as you would with a normal WordPress video.
+To edit your player, just click and press "edit" on top of it - just as you would with a normal WordPress video.
 
-= Usage with shortcodes =
+= Shortcodes =
 
-For text mode, there is a shortcode defined:
+In text mode, there is a shortcode:
 
 `[bivrost-player loop="true"]
 my_vr_movie.mp4
 my_vr_movie.webm
 [/bivrost-player]`
 
-Place the picture or movie urls inside the `[bivrost-player]` tag separated by newlines. For best results add both a webm/vp6 and a mp4/h264.
+Put the picture or movie urls in the `[bivrost-player]` tag separated by newlines. For best results add both a webm/vp6 and a mp4/h264 version.
 
-Configure the player using attributes in the shortcode. Look at the next section for a list of available options, none of them are required.
+You can configure the player using attributes in the shortcode. Below are your options, none of them are required.
 
 
 = Available options =
 
-*	`theme`: what skin to use? You have 3 skins available:
+*	`theme`: which skin do you want? There are 3 skins available:
 	* "default" - black and blue
 	* "spring" - black and green
 	* "autumn" - black and red
 	optional, default: "default"
 
-*	`width`: force the width of the player. By default the player fits to the width of available width and a 4:3 aspect, but you can override this.
+*	`width`: sets the width of the player. By default the player fits to the available width in a 4:3 aspect ratio. You can override this.
 	Provide a value in css units, ex. `500px` or `75%`.
 
-*	`height`: force the height of the player. By default the height is derived from the width and with a 4:3 aspect.
+*	`height`: sets the height of the player. By default the height is derived from its width and is set in 4:3 aspect ratio.
 	Provide a value in css units, ex. `500px` or `75%`.
 
 *	`loop`: allows the video to loop 
 	Allowed values: "true", "false";  
 	optional, default: "false".
 
-*	`autoplay`: should the content play automatically? This might not work with some platforms.
+*	`autoplay`: should the content play automatically?
 	Allowed values: "true", "false";  
 	optional, default: "true".
 
@@ -113,7 +109,7 @@ Configure the player using attributes in the shortcode. Look at the next section
 	* "facebook" - the same as two-by-three, but rotated, and each face is cropped by 1%.
 	* "horizontal-cross" - all sides are in a cross with bottom, right, front and left in the middle row; up is in the top row and down in the bottom. 
 	* "vertical-cross" - up is in the first row, bottom, right and front in the second, left in the third and down in the fourth. ATI CubeMapGen uses this format.
-	* custom - advanced, please use presets if possible; you can specify any alignment with a description string. The string is an 2d array of face names in the order they appear on the texture. The rows are separated by "," and the faces are one letter acronyms (accepts capital letters):
+	* custom - advanced, please use presets if possible; you can specify any alignment with a description string. The string is a 2d array of face names in order of how they appear in the texture. The rows are separated by "," and the faces are one letter acronyms (accepts capital letters):
 
 		*  "f" - front
 		*  "b" - back
@@ -133,22 +129,22 @@ Configure the player using attributes in the shortcode. Look at the next section
 
 	Example: `-u--,blfr,-d*2-->90+0.002`
 	
-	Please note that with cubemaps, seams can be visible due to texture filtering - this is most visible on horizontal and vertical crosses. It's best you fix them on pictures by duplicating a border into the unused part of the image. The 1% zoom with Facebook is to prevent this from happening.
+	Please note that with cubemaps, seams can be visible due to texture filtering - this is most visible on horizontal and vertical crosses. It's best you fix them on pictures by duplicating a border into the unused part of the image. The 1% zoom with Facebook prevents this from happening.
 
 
 = Commercial Use =
 
-Please note, the player's free license allows only for non-commercial use of the player. Commercial use requires you to acquire a license, please see License for details.
+Please note, the player's free license allows only for non-commercial use. For commercial use you need to acquire a license, please see License for details.
 
 
 == Installation ==
 
-To add a the BIVROST 360WebPlayer plugin using the built-in plugin installer:
+Add the BIVROST 360WebPlayer plugin using the built-in plugin installer:
 
-1. Go to `Plugins > Add New > Send plugin` and upload the zip file containing the plugin OR unpack the plugin to `wp-content/plugins/bivrost-360webplayer` directory on the server
+1. Go to `Plugins > Add New > Send plugin` and upload the plugin file
 2. Go to `Plugins > Installed` and enable the plugin
 
-After instalation, you will have a new button in the WYSYWIG editor. Alternatively, use there is a [bivrost-player] shortcode available
+After installation, you will have a new button in the WYSYWIG editor. There is a also a [bivrost-player] shortcode available.
 
 
 == Frequently Asked Questions == 
@@ -180,16 +176,14 @@ You can use the Bivrost 360Player with Google Cardboard and its many clones. Jus
 
 Some tips:
 
-* If you have a NFC tag in your Cardboard we advice you to disable NFC in your phone as it might run the cardboard app and turn off your browser.
+* If you have a NFC tag in your Cardboard we advice you to disable NFC in your phone, as it might run the cardboard app and turn off your browser.
 * Not all phones have a gyroscope. If you have problems looking left and right, but up and down works, your phone does not have one. Instead your phone has a magnetometer, which does not work well with VR. Removing the magnet from the Cardboard improves the experience in this situation.
 * Consider setting a longer time for screen timeout.
 
 
 = Platform availability =
 
-We try to make the player run on as many platforms as possible. 
-
-Currently unsupported platforms are:
+We try to make the player run on as many platforms as possible. Nevertheless we do not support the following platforms yet:
 
 * iOS
 * Windows Phone
@@ -206,7 +200,7 @@ Videos or pictures have to be served from the same domain or provide [Cross-Orig
 
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 
-Do not test from your local filesystem (the `file:///` protocol). You have to have a working webserver for the plugin to work.
+Do not test from your local filesystem (the `file:///` protocol). You need to have a working webserver for the plugin to work.
 
 
 = Seeking does not work =
@@ -220,7 +214,7 @@ Either your webserver doesn't support [Content-Range][content-range] or there ar
 
 = Where can I submit feature requests or bug reports? Where can I find the unminified version? =
 
-Please send bugs and feature requests to our [GitHub][github]. The sources are located there too. Thanks a lot in advance for any and all feedback.
+Please send bugs and feature requests to our [GitHub project][github]. The sources are located there too. Thanks a lot in advance for any and all feedback.
 
 [github]: http://github.com/Bivrost/360WebPlayer
 
@@ -232,16 +226,16 @@ Although browsers are the most accessible platforms, they are not all fully read
 
 The BIVROST 360WebPlayer has a button that allows online content to be run in a native player. This enhances performance and gives the user a better experience than viewing the content straight from the browser. If the user does not have the player yet, he or she can download it through a pop-up.
 
-The standalone player supports VR headsets, less latency, and better frame rates.
+The standalone player has less latency, better frame rates and supports VR headsets,
 
 
 
 == License ==
 
-There are two separate licenses to choose from:
+We offer two license options:
 
-1. [The free license][license-free] - use for web sites that are non commercial
-2. [The paid license][license-paid] - use for commercial web sites, one license per domain ([contact sales][payment] for payment).
+1. [Free][license-free] - for non-commercial use
+2. [Paid][license-paid] - for commercial use. We issue one license per domain ([contact us here][payment] for yours).
 
 If you want to remove or replace our branding, are unsure about which license applies to you, please [contact us for help and additional licensing options][email-sales].
 

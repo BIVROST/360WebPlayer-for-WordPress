@@ -1,27 +1,25 @@
 BIVROST 360WebPlayer for WordPress
 ==================================
 
-The BIVROST 360WebPlayer is the easiest way to stream 360 videos and pictures on your website or blog.
+Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPlayer Plugin.
 
-This plugin enables you to embed the BIVROST 360WebPlayer in a simple, WordPress way.
-
-![360WebPlayer on a laptop and phone](codecanyon-readme/README-player.png)
+![360WebPlayer for desktop and mobile](codecanyon-readme/README-player.png) (HUH?)
 
 
 Features
 --------
 
-* Fast visual setup.
-* Easy to use for the end user.
-* Both desktop and mobile.
+* Fast setup.
+* Easy to use.
+* Desktop and mobile friendly.
 * Free for personal use (see [license][license-free] for details).
 * Works on all major browsers.
-* Possible to embed more than one player on the same page.
-* Mono and stereoscopic video and pictures.
+* Supports Mono and stereoscopic videos and pictures.
 * HTTP Live Streaming (HLS).
-* [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and more.
-* Supports watching content in external native players (also [supplied by Bivrost][bivrost]).
-* We want to hear your feedback and ideas for new features, to make it even better.
+* [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and many more.
+* Supports watching content in an external native player (also [supplied by Bivrost][bivrost]).
+
+* If there is anything you miss in our player then let us know.
 
 [bivrost]: http://bivrost360.com
 [webvr]: http://webvr.info/
@@ -31,51 +29,51 @@ Features
 Installation
 ------------
 
-To add a the BIVROST 360WebPlayer plugin using the built-in plugin installer:
+Add the BIVROST 360WebPlayer plugin using the built-in plugin installer:
 
-1. Go to `Plugins > Add New > Send plugin` and upload the zip file containing the plugin
+1. Go to `Plugins > Add New > Send plugin` and upload the plugin file
 2. Go to `Plugins > Installed` and enable the plugin
 
-After instalation, you will have a new button in the WYSYWIG editor. Alternatively, use there is a [bivrost-player] shortcode available
+After installation, you will have a new button in the WYSYWIG editor. There is a also a [bivrost-player] shortcode available.
 
 
 
-Usage
+Tutorial
 -----
 
-For a video see [this YouTube video tutorial][youtube].
+For a tutorial see [this YouTube video][youtube].
 
 [youtube]: https://youtu.be/_xYJIyk0uB8
 
 
-### in the visual editor
+### Visual Editor
 
 ![The wordpress UI](screenshot-2.png)
 
-To use the plugin in visual mode, open up a post or page editor, and simply press the BIVROST 360WebPlayer button. You will look at a window to configure the player and select videos or pictures that you want to display. 
+Open the post or page editor and press the BIVROST 360WebPlayer button. Now you can configure the player and select the videos or pictures you want to display. 
 
-To add videos press the "add source" button, you can add more than one video at once using the shift, opt or control button. For best results add both a webm/vp6 and a mp4/h264.
+To add videos press the "add source" button. You can add more than one video at once using the shift, opt or control button. For best results add both a webm/vp6 and a mp4/h264 version.
 
-After you save your configuration, you will see a placeholder for the player. Press "preview changes" or publish the page to see the player in action.
+After you save your settings, you will see a placeholder for the player. Press "preview changes" or publish the page to see the player in action.
 
-To edit your player, just click it and press the "edit" icon on top of it - just as you would with a normal WordPress video.
+To edit your player, just click and press "edit" on top of it - just as you would with a normal WordPress video.
 
-### with shortcodes
+### Shortcodes
 
-For text mode, there is a shortcode defined:
+In text mode, there is a shortcode:
 
 `[bivrost-player loop="true"]
 my_vr_movie.mp4
 my_vr_movie.webm
 [/bivrost-player]`
 
-Place the picture or movie urls inside the `[bivrost-player]` tag separated by newlines. For best results add both a webm/vp6 and a mp4/h264.
+Put the picture or movie urls in the `[bivrost-player]` tag separated by newlines. For best results add both a webm/vp6 and a mp4/h264 version.
 
 Configure the player using attributes in the shortcode. 
 
 ### more information
 
-For more information, view our [GitHub project][github].
+For more information, visit our [GitHub project][github].
 
 Changelog
 ---------
