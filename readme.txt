@@ -265,8 +265,10 @@ Initial release
 
 == Third party libraries ==
 
-The Bivrost Web Player uses third party libraries:
+The BIVROST 360WebPlayer for WordPress uses third party libraries:
 
 * [THREE.js][threejs] (MIT license)
+* [hls.js][hlsjs] (Apache 2.0 License)
 
 [threejs]: http://threejs.org
+[hlsjs]: https://github.com/dailymotion/hls.js/

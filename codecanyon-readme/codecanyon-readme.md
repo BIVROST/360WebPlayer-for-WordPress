@@ -39,7 +39,7 @@ After installation, you will have a new button in the WYSYWIG editor. There is a
 
 
 Tutorial
------
+--------
 
 For a tutorial see [this YouTube video][youtube].
 

@@ -71,7 +71,7 @@
 			body: [
 				checkbox_helper("loop", "Should the movie loop?", !!JSON.parse(values.loop || JSON.stringify(defaults.loop))),
 				checkbox_helper("autoplay", "Should the movie play on load?", !!JSON.parse(values.autoplay || JSON.stringify(defaults.autoplay))),
-				listbox_helper("source", "Source type", values.source || defaults.source, ["autodetect", "video", "picture"]),
+				listbox_helper("source", "Source type", values.source || defaults.source, ["autodetect", "video", "picture", "stream-hls"]),
 				listbox_helper("stereoscopy", "Stereoscopy type", values.stereoscopy || defaults.stereoscopy, ["autodetect", "mono", "side-by-side", "top-and-bottom", "top-and-bottom-reversed"]),
 				listbox_helper("projection", "Projection type", values.projection || defaults.projection, available_projections),
 				listbox_helper("theme", "Theme", values.theme || "default", ["default", "spring", "autumn"]),
@@ -95,8 +95,13 @@
 				},
 				{	
 					type: "button",
-					text: "add source",
+					text: "add source from media gallery or upload",
 					classes: "add-button"
+				},
+				{	
+					type: "button",
+					text: "add source by url",
+					classes: "add-url-button"
 				}
 			],
 			onsubmit: function(values) {
@@ -176,6 +181,14 @@
 				});
 				reset_srcs();
 			});
+		});
+		
+		var buttonUrl=media.parentNode.parentNode.querySelector(".mce-add-url-button button");		
+		buttonUrl.addEventListener("click", function() {
+			var url=prompt("Enter 360 URL", "");
+			if(url)
+				srcs.push(url);
+			reset_srcs();
 		});
 
 		reset_srcs(media);

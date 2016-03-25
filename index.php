@@ -27,6 +27,7 @@ if(!function_exists('add_action'))
 	die("BIVROST 360WebPlayer for WordPress");
 
 function bivrost_enqueue_scripts() {
+	wp_register_script('hls-js', plugins_url('hls.min.js', __FILE__));
 	wp_register_script('bivrost-player', plugins_url('bivrost-min.js', __FILE__));
 	wp_register_style('bivrost-player', plugins_url('bivrost.css', __FILE__));
 }
@@ -64,7 +65,7 @@ function bivrost_player_shortcode($attrs, $content) {
 		'autoplay' => '/^(true|false)$/',
 		'stereoscopy' => '/^(autodetect|mono|side-by-side|top-and-bottom|top-and-bottom-reversed)$/',
 		'projection' => '/^(equirectangular|cubemap|cubemap:.+)$/',
-		'source' => '/^(autodetect|video|picture)$/',
+		'source' => '/^(autodetect|video|picture|stream-hls)$/',
 		'theme' => '/^(default|spring|autumn)$/',
 		'width' => '/^(\d*.+$|$)/',
 		'height' => '/^(\d*.+$|$)/'
@@ -89,7 +90,7 @@ function bivrost_player_shortcode($attrs, $content) {
 	
 	$urlencode=false;
 	$attr=array();
-	if($attrs)
+	if($attrs) {
 		foreach($attrs as $k => $v) {
 			if($k === 'urlencode')
 				$urlencode=json_decode($v);
@@ -100,7 +101,10 @@ function bivrost_player_shortcode($attrs, $content) {
 					;	// TODO: warning
 			}
 		};
-	
+		if(isset($attrs['source']) && $attrs['source'] === 'stream-hls')
+			wp_enqueue_script('hls-js');
+	}
+		
 	ob_start();
 	?>
 		<bivrost-player<?php 
