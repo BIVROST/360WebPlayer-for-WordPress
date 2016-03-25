@@ -5,7 +5,7 @@
  * @author Bivrost
  * @license Custom opensource license: http://github.com/Bivrost/360WebPlayer/#License
  * @link http://bivrost360.com
- * @copyright (c) 2015, Bivrost sp. z o.o.
+ * @copyright (c) 2016, Bivrost sp. z o.o.
  * 
  * @wordpress-plugin
  * Plugin Name: BIVROST 360WebPlayer
@@ -20,14 +20,14 @@
  * License URI: http://github.com/Bivrost/360WebPlayer/#License
  * Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
  * Requires at least: 4.2.0
- * Tested up to: 4.3
+ * Tested up to: 4.5
  */
 
 if(!function_exists('add_action'))
 	die("BIVROST 360WebPlayer for WordPress");
 
 function bivrost_enqueue_scripts() {
-	wp_register_script('bivrost-player', plugins_url('bivrost.js', __FILE__));
+	wp_register_script('bivrost-player', plugins_url('bivrost-min.js', __FILE__));
 	wp_register_style('bivrost-player', plugins_url('bivrost.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'bivrost_enqueue_scripts');
