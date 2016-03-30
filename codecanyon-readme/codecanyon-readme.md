@@ -14,7 +14,6 @@ Features
 * Fast visual setup.
 * Easy to use for the end user.
 * Both desktop and mobile.
-* Free for personal use (see [license][license-free] for details).
 * Works on all major browsers.
 * Possible to embed more than one player on the same page.
 * Mono and stereoscopic video and pictures.
