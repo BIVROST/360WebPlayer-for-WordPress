@@ -1,19 +1,53 @@
-/* global tinymce, wp */
+/* global tinymce, wp, tinyMCE */
+
+"use strict";
 
 (function() {
+
+	// default values for attributes
+	var defaults={
+		loop: false,
+		autoplay: true,
+		source: "autodetect",
+		stereoscopy: "autodetect",
+		projection: "equirectangular",
+		theme: "default",
+		width: "",
+		height: ""
+	};
+
+	var i18n={
+		custom_uploader_select_files: "Select movie and alt sources",
+		title_360webplayer_configuration: "BIVROST 360WebPlayer configuration",
+		label_loop: "Should the movie loop?",
+		label_autoplay: "Should the movie play on load?",
+		label_source: "Source type",
+		label_stereoscopy: "Stereoscopy type",
+		label_projection: "Projection type",
+		label_theme: "Theme",
+		label_width: "Widget width in css units (px, %, etc),\n leave empty for default",
+		label_height: "Widget height in css units (px, %, etc),\n leave empty for default",
+		button_add_gallery: "add source from media gallery or upload",
+		button_add_url: "add source by url",
+		sources_list: "360 video or picture sources:",
+		sources_empty: "No 360 video or picture sources found. Add them using the 'add source' button",
+		prompt_url: "Enter 360 URL",
+		button_remove: "remove",
+		button_add_360webplayer: "BIVROST 360WebPlayer"
+	};
 	
 	// media selector
 	function get_media(on_got_media) {
 		// TODO: add preselected
 		var custom_uploader = (wp.media({
-			title: 'Select movie and alt sources',
+			title: i18n.custom_uploader_select_files,
 			button: {
-				text: 'OK'
+				text: "OK"
 			},
 			multiple: true
 		})
-		.on('select', function() {
-			var selection=custom_uploader.state().get('selection');
+		.on("select", function() {
+			var selection=custom_uploader.state().get("selection");
 			on_got_media(selection.models);
 		})
 		.open());
@@ -43,20 +77,7 @@
 				text: ""
 			};
 		};
-
-		var defaults={
-			loop: false,
-			autoplay: false,
-			source: "autodetect",
-			stereoscopy: "autodetect",
-			projection: "equirectangular",
-			theme: "default",
-			width: "",
-			height: ""
-		};
 		
-		// http://stackoverflow.com/questions/24871792/tinymce-api-v4-windowmanager-open-what-widgets-can-i-configure-for-the-body-op
-
 		var id="placeholder-"+(+new Date());
 
 		var srcs=(shortcode.content || "").replace(/<[^>]+>/g, " ").split(/\s+/).map(function(s) { return s.trim(); }).filter(function(s) { return s !== ""; });
@@ -66,26 +87,27 @@
 		if(values.projection && available_projections.indexOf(values.projection) === -1 && /^cubemap:.+/.test(values.projection))	// custom cubemap projection - add it to list
 			available_projections.push(values.projection);
 
+		// http://stackoverflow.com/questions/24871792/tinymce-api-v4-windowmanager-open-what-widgets-can-i-configure-for-the-body-op
 		window.win=tinyMCE.activeEditor.windowManager.open( {
-			title: 'BIVROST 360WebPlayer configuration',
+			title: i18n.title_360webplayer_configuration,
 			body: [
-				checkbox_helper("loop", "Should the movie loop?", !!JSON.parse(values.loop || JSON.stringify(defaults.loop))),
-				checkbox_helper("autoplay", "Should the movie play on load?", !!JSON.parse(values.autoplay || JSON.stringify(defaults.autoplay))),
-				listbox_helper("source", "Source type", values.source || defaults.source, ["autodetect", "video", "picture", "stream-hls"]),
-				listbox_helper("stereoscopy", "Stereoscopy type", values.stereoscopy || defaults.stereoscopy, ["autodetect", "mono", "side-by-side", "top-and-bottom", "top-and-bottom-reversed"]),
-				listbox_helper("projection", "Projection type", values.projection || defaults.projection, available_projections),
-				listbox_helper("theme", "Theme", values.theme || "default", ["default", "spring", "autumn"]),
+				checkbox_helper("loop", i18n.label_loop, !!JSON.parse(values.loop || JSON.stringify(defaults.loop))),
+				checkbox_helper("autoplay", i18n.label_autoplay, !!JSON.parse(values.autoplay || JSON.stringify(defaults.autoplay))),
+				listbox_helper("source", i18n.label_source, values.source || defaults.source, ["autodetect", "video", "picture", "stream-hls"]),
+				listbox_helper("stereoscopy", i18n.label_stereoscopy, values.stereoscopy || defaults.stereoscopy, ["autodetect", "mono", "side-by-side", "top-and-bottom", "top-and-bottom-reversed"]),
+				listbox_helper("projection", i18n.label_projection, values.projection || defaults.projection, available_projections),
+				listbox_helper("theme", i18n.label_theme, values.theme || defaults.theme, ["default", "spring", "autumn"]),
 				{
 					type: "textbox",
 					name: "width",
-					label: "Widget width in css units (px, %, etc),\n leave empty for default",
-					value: values.width || ""
+					label: i18n.label_width,
+					value: values.width || defaults.width
 				},
 				{
 					type: "textbox",
 					name: "height",
-					label: "Widget height in css units (px, %, etc),\n leave empty for default",
-					value: values.height || ""
+					label: i18n.label_height,
+					value: values.height || defaults.height
 				},
 				{
 					type: "container",
@@ -95,12 +117,12 @@
 				},
 				{	
 					type: "button",
-					text: "add source from media gallery or upload",
+					text: i18n.button_add_gallery,
 					classes: "add-button"
 				},
 				{	
 					type: "button",
-					text: "add source by url",
+					text: i18n.button_add_url,
 					classes: "add-url-button"
 				}
 			],
@@ -109,8 +131,9 @@
 					if(values.data.hasOwnProperty(key)) {
 						var val=values.data[key];
 						delete shortcode.attrs.named[key];
-						if(defaults[key] !== val)
+						if(defaults[key] !== val) {
 							shortcode.attrs.named[key]=values.data[key];
+						}
 					}
 				
 				shortcode.content="\n"+srcs.join("<br/>\n")+"\n";
@@ -123,10 +146,11 @@
 //		while(!(/mce-formitem/.test(media.className)))
 			media=media.parentNode.parentNode.parentNode.parentNode;
 		
+		
 		function reset_srcs() {
 			media.innerHTML="<p>"+ (srcs.length 
-				? "360 video or picture sources:"
-				: "No 360 video or picture sources found. Add them using the 'add source' button"
+				? i18n.sources_list
+				: i18n.sources_empty
 			)+"</p>\n";
 			var ul=document.createElement("ul");
 			media.appendChild(ul);
@@ -141,7 +165,7 @@
 				return true;
 			});
 			
-			// 
+			// add labels and remove buttons
 			srcs.forEach(function(src) {
 				var li=document.createElement("li");
 				
@@ -152,7 +176,7 @@
 				span.className="mce-container";
 				
 				var remove=document.createElement("button");
-				remove.appendChild(document.createTextNode("remove"));
+				remove.appendChild(document.createTextNode(i18n.button_remove));
 				remove.addEventListener("click", function() {
 					srcs=srcs.filter(function(s) { return s !== src; } );
 					reset_srcs();
@@ -185,7 +209,7 @@
 		
 		var buttonUrl=media.parentNode.parentNode.querySelector(".mce-add-url-button button");		
 		buttonUrl.addEventListener("click", function() {
-			var url=prompt("Enter 360 URL", "");
+			var url=prompt(i18n.prompt_url, "");
 			if(url)
 				srcs.push(url);
 			reset_srcs();
@@ -195,7 +219,7 @@
 	}
 	
 	
-	var url_;
+	var plugin_url;
 	
 	// shortcode preview
 	wp.mce.views.register('bivrost-player', _.extend({}, {
@@ -205,7 +229,7 @@
 		shortcode: "bivrost-player",
 
 		initialize: function() {
-			this.render("<img src=\""+url_+"/preview.png\">");
+			this.render("<img src=\""+plugin_url+"/preview.png\">");
 		},
 		
 		edit: function(text, update) {
@@ -219,9 +243,9 @@
 	// tinymce button
 	tinymce.create("tinymce.plugins.bivrost", {
 		init: function(editor, url) {
-			url_=url;
+			plugin_url=url;
 			editor.addButton("bivrost_button", {
-				title: "BIVROST 360WebPlayer",
+				title: i18n.button_add_360webplayer,
 				image: url+"/bivrost-button.png",
 				onclick: function() {
 					var shortcode=new wp.shortcode({tag: "bivrost-player"});

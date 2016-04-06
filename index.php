@@ -42,7 +42,7 @@ function bivrost_player_shortcode($attrs, $content) {
 	$srcs=array();
 
 	$shortcode_matches=array();
-	preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $shortcode_matches, PREG_SET_ORDER );
+	preg_match_all('/' . get_shortcode_regex() . '/s', $content, $shortcode_matches, PREG_SET_ORDER);
 	foreach($shortcode_matches as $match) {
 		$tag=$match[2];
 		if($tag !== 'video')
