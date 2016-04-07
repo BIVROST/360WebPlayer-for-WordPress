@@ -140,7 +140,7 @@ Please note, the player's free license allows only for non-commercial use. For c
 
 Add the BIVROST 360WebPlayer plugin using the built-in plugin installer:
 
-1. Go to `Plugins > Add New > Send plugin` and upload the plugin file
+1. Go to `Plugins > Add New > Send plugin` and upload the zip file containing the plugin
 2. Go to `Plugins > Installed` and enable the plugin
 
 After installation, you will have a new button in the WYSYWIG editor. There is a also a [bivrost-player] shortcode available.

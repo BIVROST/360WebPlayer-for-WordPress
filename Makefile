@@ -22,3 +22,10 @@ wordpress.html: readme.txt screenshot-* Makefile
 
 codecanyon.html: screenshot-* codecanyon-readme/* Makefile
 		pandoc --self-contained -f markdown codecanyon-readme/codecanyon-readme.md --to=html5 -o codecanyon.html
+
+lang/bivrost-360webplayer.pot: locale.php
+	echo "Updating POT file..."
+	xgettext -L PHP -o lang/360webplayer.pot -j -k__ -k_e locale.php
+
+lang/bivrost-360webplayer-pl_PL.mo: bivrost-lang/360webplayer-pl_PL.po
+	msgfmt lang/bivrost-360webplayer-pl_PL.po -o bivrost-lang/360webplayer-pl_PL.mo

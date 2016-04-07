@@ -1,0 +1,99 @@
+# BIVROST 360WebPlayer.
+# Copyright (C) Bivrost Sp. Z O. O.
+# This file is distributed under the same license as the BIVROST 360WebPlayer package.
+# Krzysztof Bociurko <krzysztof.bociurko@bivrost360.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: krzysztof.bociurko@bivrost360.com\n"
+"POT-Creation-Date: 2016-04-07 12:37+0200\n"
+"PO-Revision-Date: 2016-04-07 12:42+0200\n"
+"Last-Translator: Krzysztof Bociurko <krzysztof.bociurko@bivrost360.com>\n"
+"Language-Team: Bivrost sp. z o. o.\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#: locale.php:13
+msgid "BIVROST 360WebPlayer configuration"
+msgstr "BIVROST 360WebPlayer ustawienia"
+
+#: locale.php:14
+msgid "Should the movie loop?"
+msgstr "Czy film ma się powtarzać w nieskończoność?"
+
+#: locale.php:15
+msgid "Should the movie play automaticaly on load?"
+msgstr "Czy film ma być automatycznie odtwarzany?"
+
+#: locale.php:16
+msgid "Source type"
+msgstr "Typ źródła"
+
+#: locale.php:17
+msgid "Stereoscopy type"
+msgstr "Typ stereoskopii"
+
+#: locale.php:18
+msgid "Projection type"
+msgstr "Ty projekcji"
+
+#: locale.php:19
+msgid "Theme"
+msgstr "Temat graficzny"
+
+#: locale.php:20
+msgid "Widget width in css units (px, %, etc),\\nleave empty for default"
+msgstr ""
+"Szerokość widżetu w jednostkach css (px, % itp.),\\npozostaw puste aby "
+"dostosować automatycznie"
+
+#: locale.php:21
+msgid "Widget height in css units (px, %, etc),\\nleave empty for default"
+msgstr ""
+"Wysokość widżetu w jednostkach css (px, % itp.),\\npozostaw puste aby "
+"dostosować automatycznie"
+
+#: locale.php:22
+msgid "add source from media gallery or upload"
+msgstr "dodaj źródło z galerii mediów lub wgraj nowe"
+
+#: locale.php:23
+msgid "add source by url"
+msgstr "dodaj źródło po adresie URL"
+
+#: locale.php:24
+msgid "360 video or picture sources:"
+msgstr "Wideo lub zdjęcia 360:"
+
+#: locale.php:25
+msgid ""
+"No 360 video or picture sources found. Add them using the 'add source' button"
+msgstr ""
+"Nie ma dodanych źródeł filmów lub zdjęć 360. Dodaj je poniższym guzikiem."
+
+#: locale.php:27
+msgid "remove"
+msgstr "usuń"
+
+#: locale.php:28
+msgid "BIVROST 360WebPlayer"
+msgstr "BIVROST 360WebPlayer"
+
+#: locale.php:12
+msgid "Select movie and alternate sources"
+msgstr "Wybierz film i jego wersje alternatywne"
+
+#: locale.php:26
+msgid "Enter URL to movie or picture"
+msgstr "Podaj adres URL do filmu lub zdjęcia"
+
+#~ msgid "Select movie and alt sources"
+#~ msgstr "Wybierz film i jego wersje alternatywne"
+
+#~ msgid "Enter 360 URL"
+#~ msgstr "Adres materiału"

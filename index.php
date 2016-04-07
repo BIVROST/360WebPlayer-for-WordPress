@@ -8,14 +8,14 @@
  * @copyright (c) 2016, Bivrost sp. z o.o.
  * 
  * @wordpress-plugin
- * Plugin Name: BIVROST 360WebPlayer
+ * Plugin Name: BIVROST 360WebPlayer for WordPress
  * Plugin URI: http://bivrost360.com
  * Description: Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to show 360 videos and pictures on your blog or website.
  * Version: 1.0
  * Author: Bivrost
  * Author URI: http://bivrost360.com
- * Text Domain: bivrost
- * Domain Path: /languages
+ * Text Domain: bivrost-360webplayer
+ * Domain Path: /lang/
  * License:     Custom opensource license
  * License URI: http://github.com/Bivrost/360WebPlayer/#License
  * Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
@@ -34,7 +34,7 @@ function bivrost_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'bivrost_enqueue_scripts');
 
 
-
+// shortcode interpreter
 function bivrost_player_shortcode($attrs, $content) {
 	wp_enqueue_style('bivrost-player');
 	wp_enqueue_script('bivrost-player');
@@ -135,13 +135,26 @@ function bivrost_mce_button($buttons) {
 	array_push($buttons, 'bivrost_button');
 	return $buttons;
 }
-function bivrost_mce_plugin($plugins) {	
+function bivrost_mce_plugin($plugins) {
 	$plugins['bivrost']=plugins_url('bivrost-tinymce.js', __FILE__);
 	return $plugins;
+}
+function bivrost_mce_locale($locales) {
+	$locales['bivrost-360webplayer']=plugin_dir_path(__FILE__).'locale.php';
+	return $locales;
 }
 function bivrost_admin_init() {
 	wp_enqueue_script('thickbox');
 	add_filter('mce_buttons', 'bivrost_mce_button');
 	add_filter('mce_external_plugins', 'bivrost_mce_plugin');
+	add_filter('mce_external_languages', 'bivrost_mce_locale');
 }
 add_filter('admin_init', 'bivrost_admin_init');
+
+
+// i18n
+function bivrost_load_textdomain() {
+	$relpath=basename(plugin_dir_path(__FILE__)).'/lang/';
+	$loaded=load_plugin_textdomain('bivrost-360webplayer', false, $relpath);
+}
+add_action('plugins_loaded', 'bivrost_load_textdomain');

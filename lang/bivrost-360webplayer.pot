@@ -1,0 +1,86 @@
+# BIVROST 360WebPlayer.
+# Copyright (C) Bivrost Sp. Z O. O.
+# This file is distributed under the same license as the BIVROST 360WebPlayer package.
+# Krzysztof Bociurko <krzysztof.bociurko@bivrost360.com>, 2016
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: krzysztof.bociurko@bivrost360.com\n"
+"POT-Creation-Date: 2016-04-07 12:37+0200\n"
+"PO-Revision-Date: 2016-04-07 12:37+0200\n"
+"Last-Translator: Krzysztof Bociurko <krzysztof.bociurko@bivrost360.com>\n"
+"Language-Team: pl <krzysztof.bociurko@bivrost360.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: locale.php:13
+msgid "BIVROST 360WebPlayer configuration"
+msgstr ""
+
+#: locale.php:14
+msgid "Should the movie loop?"
+msgstr ""
+
+#: locale.php:15
+msgid "Should the movie play automaticaly on load?"
+msgstr ""
+
+#: locale.php:16
+msgid "Source type"
+msgstr ""
+
+#: locale.php:17
+msgid "Stereoscopy type"
+msgstr ""
+
+#: locale.php:18
+msgid "Projection type"
+msgstr ""
+
+#: locale.php:19
+msgid "Theme"
+msgstr ""
+
+#: locale.php:20
+msgid "Widget width in css units (px, %, etc),\\nleave empty for default"
+msgstr ""
+
+#: locale.php:21
+msgid "Widget height in css units (px, %, etc),\\nleave empty for default"
+msgstr ""
+
+#: locale.php:22
+msgid "add source from media gallery or upload"
+msgstr ""
+
+#: locale.php:23
+msgid "add source by url"
+msgstr ""
+
+#: locale.php:24
+msgid "360 video or picture sources:"
+msgstr ""
+
+#: locale.php:25
+msgid ""
+"No 360 video or picture sources found. Add them using the 'add source' button"
+msgstr ""
+
+#: locale.php:27
+msgid "remove"
+msgstr ""
+
+#: locale.php:28
+msgid "BIVROST 360WebPlayer"
+msgstr ""
+
+#: locale.php:12
+msgid "Select movie and alternate sources"
+msgstr ""
+
+#: locale.php:26
+msgid "Enter URL to movie or picture"
+msgstr ""
