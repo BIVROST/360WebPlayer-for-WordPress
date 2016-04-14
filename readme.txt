@@ -139,7 +139,7 @@ Please note, the BIVROST 360WebPlayer's free license allows only for non-commerc
 
 Add the BIVROST 360WebPlayer for WordPress plugin using the built-in plugin installer:
 
-1. Go to `Plugins > Add New > Send plugin` and upload the plugin file
+1. Go to `Plugins > Add New > Send plugin` and upload the zip file containing the plugin
 2. Go to `Plugins > Installed` and enable the plugin
 
 After installation, you will have a new button in the WYSYWIG editor. There is a also a [bivrost-player] shortcode available.
@@ -192,13 +192,18 @@ If you're experiencing problems with other recent platforms, please let us know.
 
 = Video does not work =
 
-Check if your device supports this kind of video by playing it directly in the browser. Some devices support only up to 1920x1080 resolution.
+Potential fixes:
 
-Videos or pictures have to be served from the same domain or provide [Cross-Origin Resource Sharing][cors]. Some browsers do not support CORS well.
+1. Check if your device supports this kind of video by playing it directly in the browser. Some popular devices support only up to 1920x1080 resolution.
+
+2. Videos or pictures have to be served from the same domain or provide [Cross-Origin Resource Sharing][cors] headers.
+
+Some browsers do not support CORS well, for example Safari - for them you have to serve the content from the same subdomain, port and protocol as the HTML.
+
+It is possible that with a CORS issue the audio will play, but the video will not. Check your web development console for details.
 
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 
-Do not test from your local filesystem (the `file:///` protocol). You need to have a working webserver for the plugin to work.
 
 
 = Seeking does not work =
