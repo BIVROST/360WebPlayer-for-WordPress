@@ -4,15 +4,14 @@ Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtu
 Requires at least: 4.2.0
 Tested up to: 4.5
 Stable tag: trunk
-License: Custom opensource license
-License URI: http://github.com/Bivrost/360WebPlayer/#License
+License: GPL v2
 
-The BIVROST 360WebPlayer is the easiest way to stream 360 videos and pictures on your website or blog.
+The BIVROST 360WebPlayer for WordPress is the easiest way to stream 360 videos and pictures on your website or blog.
 
 
 == Description ==
 
-Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPlayer Plugin.
+Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPlayer for WordPress Plugin.
 
 = Features = 
 
@@ -133,12 +132,12 @@ You can configure the player using attributes in the shortcode. Below are your o
 
 = Commercial Use =
 
-Please note, the player's free license allows only for non-commercial use. For commercial use you need to acquire a license, please see License for details.
+Please note, the BIVROST 360WebPlayer's free license allows only for non-commercial use. For commercial use you need to acquire a license, please see License for details.
 
 
 == Installation ==
 
-Add the BIVROST 360WebPlayer plugin using the built-in plugin installer:
+Add the BIVROST 360WebPlayer for WordPress plugin using the built-in plugin installer:
 
 1. Go to `Plugins > Add New > Send plugin` and upload the zip file containing the plugin
 2. Go to `Plugins > Installed` and enable the plugin
@@ -236,7 +235,9 @@ The standalone player has less latency, better frame rates and supports VR heads
 
 == License ==
 
-We offer two license options:
+The WordPress plugin is a wrapper and configuration tool for the BIVROST 360WebPlayer.
+
+The 360WebPlayer has two license options:
 
 1. [Free][license-free] - for non-commercial use
 2. [Paid][license-paid] - for commercial use. We issue one license per domain ([contact us here][payment] for yours).
@@ -274,6 +275,7 @@ The BIVROST 360WebPlayer for WordPress uses third party libraries:
 
 * [THREE.js][threejs] (MIT license)
 * [hls.js][hlsjs] (Apache 2.0 License)
+* [BIVROST 360 WebPlayer][github] (Custom open source license)
 
 [threejs]: http://threejs.org
 [hlsjs]: https://github.com/dailymotion/hls.js/
