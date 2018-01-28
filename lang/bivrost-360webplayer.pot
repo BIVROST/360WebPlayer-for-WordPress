@@ -1,86 +1,87 @@
-# BIVROST 360WebPlayer.
-# Copyright (C) Bivrost Sp. Z O. O.
-# This file is distributed under the same license as the BIVROST 360WebPlayer package.
-# Krzysztof Bociurko <krzysztof.bociurko@bivrost360.com>, 2016
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: krzysztof.bociurko@bivrost360.com\n"
-"POT-Creation-Date: 2016-04-07 12:37+0200\n"
-"PO-Revision-Date: 2016-04-07 12:37+0200\n"
-"Last-Translator: Krzysztof Bociurko <krzysztof.bociurko@bivrost360.com>\n"
-"Language-Team: pl <krzysztof.bociurko@bivrost360.com>\n"
-"Language: en\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-28 16:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: locale.php:13
+#: locale.php:13 locale.php:16
 msgid "BIVROST 360WebPlayer configuration"
 msgstr ""
 
-#: locale.php:14
+#: locale.php:14 locale.php:17
 msgid "Should the movie loop?"
 msgstr ""
 
-#: locale.php:15
+#: locale.php:15 locale.php:18
 msgid "Should the movie play automaticaly on load?"
 msgstr ""
 
-#: locale.php:16
+#: locale.php:16 locale.php:19
 msgid "Source type"
 msgstr ""
 
-#: locale.php:17
+#: locale.php:17 locale.php:20
 msgid "Stereoscopy type"
 msgstr ""
 
-#: locale.php:18
+#: locale.php:18 locale.php:21
 msgid "Projection type"
 msgstr ""
 
-#: locale.php:19
+#: locale.php:19 locale.php:22
 msgid "Theme"
 msgstr ""
 
-#: locale.php:20
-msgid "Widget width in css units (px, %, etc),\\nleave empty for default"
+#: locale.php:20 locale.php:23
+msgid "Widget width in css units (px, %, etc), leave empty for default"
 msgstr ""
 
-#: locale.php:21
-msgid "Widget height in css units (px, %, etc),\\nleave empty for default"
+#: locale.php:21 locale.php:24
+msgid "Widget height in css units (px, %, etc), leave empty for default"
 msgstr ""
 
-#: locale.php:22
+#: locale.php:22 locale.php:25
 msgid "add source from media gallery or upload"
 msgstr ""
 
-#: locale.php:23
+#: locale.php:23 locale.php:26
 msgid "add source by url"
 msgstr ""
 
-#: locale.php:24
+#: locale.php:24 locale.php:27
 msgid "360 video or picture sources:"
 msgstr ""
 
-#: locale.php:25
+#: locale.php:25 locale.php:28
 msgid ""
 "No 360 video or picture sources found. Add them using the 'add source' button"
 msgstr ""
 
-#: locale.php:27
+#: locale.php:27 locale.php:30
 msgid "remove"
 msgstr ""
 
-#: locale.php:28
+#: locale.php:28 locale.php:31
 msgid "BIVROST 360WebPlayer"
 msgstr ""
 
-#: locale.php:12
+#: locale.php:12 locale.php:15
 msgid "Select movie and alternate sources"
 msgstr ""
 
-#: locale.php:26
+#: locale.php:26 locale.php:29
 msgid "Enter URL to movie or picture"
 msgstr ""

@@ -40,22 +40,22 @@ msgstr "Typ stereoskopii"
 
 #: locale.php:18
 msgid "Projection type"
-msgstr "Ty projekcji"
+msgstr "Typ projekcji"
 
 #: locale.php:19
 msgid "Theme"
 msgstr "Temat graficzny"
 
 #: locale.php:20
-msgid "Widget width in css units (px, %, etc),\\nleave empty for default"
+msgid "Widget width in css units (px, %, etc), leave empty for default"
 msgstr ""
-"Szerokość widżetu w jednostkach css (px, % itp.),\\npozostaw puste aby "
+"Szerokość widżetu w jednostkach css (px, % itp.), pozostaw puste aby "
 "dostosować automatycznie"
 
 #: locale.php:21
-msgid "Widget height in css units (px, %, etc),\\nleave empty for default"
+msgid "Widget height in css units (px, %, etc), leave empty for default"
 msgstr ""
-"Wysokość widżetu w jednostkach css (px, % itp.),\\npozostaw puste aby "
+"Wysokość widżetu w jednostkach css (px, % itp.), pozostaw puste aby "
 "dostosować automatycznie"
 
 #: locale.php:22
