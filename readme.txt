@@ -2,7 +2,8 @@
 Contributors: chanibal
 Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
 Requires at least: 4.2.0
-Tested up to: 4.5
+Tested up to: 4.9.2
+Requires PHP: 5.2
 Stable tag: trunk
 License: GPL v2
 
@@ -16,16 +17,19 @@ Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPl
 = Features = 
 
 
-* Fast setup.
-* Easy to use.
-* Desktop and mobile friendly.
+* Fast integration into any web site.
+* Easy to use for the end user.
+* Both desktop and mobile.
 * Free for personal use (see [license][license-free] for details).
-* Works on all major browsers.
-* Supports Mono and stereoscopic videos and pictures.
+* Works on all major browsers and systems.
+* Possible to embed more than one player on the same page.
+* Mono and stereoscopic video and pictures.
 * HTTP Live Streaming (HLS).
-* [WebVR][webvr] (MozVR) support - works with Oculus Rift, Cardboard and many more.
-* Supports watching content in an external native player (also [supplied by Bivrost][bivrost]).
-* If there is anything you miss in our player then let us know.
+* Works well with touch.
+* Well tested and supports many edge cases.
+* [WebVR][webvr] support - works with Oculus Rift, Vive, Windows Mixed Reality, OSVR, GearVR, Google Cardboard and more.
+* Supports watching content in external native players ([by Bivrost][player-windows]).
+* We want to hear your feedback and ideas for new features, to make it even better.
 
 [bivrost]: http://bivrost360.com
 [webvr]: http://webvr.info/
@@ -158,36 +162,37 @@ After installation, you will have a new button in the WYSYWIG editor. There is a
 * ` + `, ` - ` - zoom in/out (not available in VR mode).
 
 
-= Virtual Reality on desktop with WebVR =
+= Virtual Reality on desktop and mobile with WebVR  =
 
-At the time of writing, WebVR is supported by Firefox Nightly. It supports Oculus Rift and other headsets like HTC Vive.
+At the time of writing, WebVR is supported by Microsoft Edge, [Firefox Nightly][webvr-firefox], special [Windows builds of Chromium][webvr-chromium] and [Chrome Canary][webvr-chrome-canary], Google Chrome on Android with Cardboard (after enabling WebVR in `chrome://flags/#enable-webvr`) and [Samsung Internet Browser for Gear VR][webvr-samsung].
 
-When you have a VR headset, press ` V ` or the VR button to go to VR mode.
+When you have a supported platform, an headset button will be visible in 360WebPlayer - press it to enter VR.
 
-[mozvr]: http://mozvr.com/downloads/
+For more platform specific instructions look at the [WebVR][webvr] website.
+
 [webvr]: http://webvr.info/
+[webvr-firefox]: https://github.com/Web-VR/iswebvrready/wiki/Instructions%3A-Firefox-Nightly
+[webvr-chromium]: https://github.com/Web-VR/iswebvrready/wiki/Instructions%3A-Chromium
+[webvr-chrome-canary]: https://webvr.info/get-chrome/
+[webvr-chrome]: chrome://flags/#enable-webvr
+[webvr-samsung]: https://github.com/Web-VR/iswebvrready/wiki/Instructions%3A-Samsung-Internet-Browser-for-Gear-VR-on-Android
 
 
-= Virtual Reality on mobile with Google Cardboard =
+= Virtual Reality on mobile with legacy Google Cardboard support =
 
-You can use the Bivrost 360Player with Google Cardboard and its many clones. Just press the "eye" button to go to VR mode.
+You can use the Bivrost 360WebPlayer with Google Cardboard and its many clones with a simple split screen. Just press the "headset" button to go to VR mode.
+
+Contrary to most players, you don't have to enable screen rotation for 360WebPlayer to work properly in cardboard mode. The phone can be in both landscape or portrait mode.
+
+Press back or "x" button to exit VR mode.
 
 Some tips:
 
-* If you have a NFC tag in your Cardboard we advice you to disable NFC in your phone, as it might run the cardboard app and turn off your browser.
-* Not all phones have a gyroscope. If you have problems looking left and right, but up and down works, your phone does not have one. Instead your phone has a magnetometer, which does not work well with VR. Removing the magnet from the Cardboard improves the experience in this situation.
+* If you have a NFC tag in your Cardboard we advice you to disable NFC in your phone as it might run the cardboard app and turn off your browser.
+* Not all phones have a gyroscope. If you have problems looking left and right, but up and down works, your phone does not have one. Instead your phone has a magnetometer, which does not work well with VR. Removing the magnet from the Cardboard improves the experience in this situation. Even if you have a gyroscope, many browsers ignore it (looking at you, recent Chrome). 
 * Consider setting a longer time for screen timeout.
+* If possible, use WebVR mode - it has far more accurate head movement and proper lens distortion.
 
-
-= Platform availability =
-
-We try to make the player run on as many platforms as possible. Nevertheless we do not support the following platforms yet:
-
-* iOS
-* Windows Phone
-* GearVR
-
-If you're experiencing problems with other recent platforms, please let us know.
 
 
 = Video does not work =
@@ -217,9 +222,9 @@ Either your webserver doesn't support [Content-Range][content-range] or there ar
 
 = Where can I submit feature requests or bug reports? Where can I find the unminified version? =
 
-Please send bugs and feature requests to our [GitHub project][github]. The sources are located there too. Thanks a lot in advance for any and all feedback.
+Please send bugs and feature requests to our [GitLab project][gitlab]. The sources are located there too. Thanks a lot in advance for any and all feedback.
 
-[github]: http://github.com/Bivrost/360WebPlayer
+[gitlab]: http://gitlab.com/BIVROST/360WebPlayer
 
 
 
@@ -235,18 +240,18 @@ The standalone player has less latency, better frame rates and supports VR heads
 
 == License ==
 
-The WordPress plugin is a wrapper and configuration tool for the BIVROST 360WebPlayer.
+This WordPress plugin is a wrapper and configuration tool for the BIVROST 360WebPlayer.
 
 The 360WebPlayer has two license options:
 
 1. [Free][license-free] - for non-commercial use
-2. [Paid][license-paid] - for commercial use. We issue one license per domain ([contact us here][payment] for yours).
+2. [Paid][license-paid] - for commercial use. We issue one license per domain ([contact us here][email-sales] for yours).
 
 If you want to remove or replace our branding, are unsure about which license applies to you, please [contact us for help and additional licensing options][email-sales].
 
 [email-sales]: mailto:contact@bivrost360.com
-[license-free]: http://github.com/Bivrost/360WebPlayer/LICENSE-free.md
-[license-paid]: http://github.com/Bivrost/360WebPlayer/LICENSE-paid.md
+[license-free]: https://gitlab.com/BIVROST/360WebPlayer/blob/master/LICENSE-free.md
+[license-paid]: https://gitlab.com/BIVROST/360WebPlayer/blob/master/LICENSE-commercial.md
 
 
 
@@ -259,14 +264,13 @@ If you want to remove or replace our branding, are unsure about which license ap
 
 == Changelog ==
 
-= 1.0 (TODO: date) =
-
-Initial release
+* 2016-04-15: Initial release 
+* 2018-01-28: Updated to WordPress 4.9
 
 
 == Upgrade Notice ==
 
-Initial release
+No changes 
 
 
 == Third party libraries ==
