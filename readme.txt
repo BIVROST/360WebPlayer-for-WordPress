@@ -143,11 +143,13 @@ Please note, the BIVROST 360WebPlayer's free license allows only for non-commerc
 
 Add the BIVROST 360WebPlayer for WordPress plugin using the built-in plugin installer:
 
-1. Go to `Plugins > Add New > Send plugin` and upload the zip file containing the plugin
-2. Go to `Plugins > Installed` and enable the plugin
+1. Download the plugin from [the releases page][download]
+2. Go to `Plugins > Add New > Send plugin` and upload the zip file containing the plugin
+3. Go to `Plugins > Installed` and enable the plugin
 
-After installation, you will have a new button in the WYSYWIG editor. There is a also a [bivrost-player] shortcode available.
+After installation, you will have a new button in the WYSYWIG editor. There is a also a `[bivrost-player]` shortcode available.
 
+[download]: https://gitlab.com/BIVROST/360WebPlayer-for-WordPress/tags
 
 == Frequently Asked Questions == 
 
