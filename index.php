@@ -3,13 +3,13 @@
 /**
  * @package BIVROST 360WebPlayer for WordPress
  * @author Bivrost
- * @license Custom opensource license: http://github.com/Bivrost/360WebPlayer/#License
- * @link http://bivrost360.com
+ * @license Custom opensource license: https://gitlab.com/BIVROST/360WebPlayer/#License
+ * @link  https://gitlab.com/BIVROST/360WebPlayer/blob/master/LICENSE-commercial.md
  * @copyright (c) 2016, Bivrost sp. z o.o.
  * 
  * @wordpress-plugin
  * Plugin Name: BIVROST 360WebPlayer for WordPress
- * Plugin URI: http://bivrost360.com
+ * Plugin URI: https://tools.bivrost360.com/360WebPlayer-for-WordPress
  * Description: Easy virtual reality on desktop and mobile: the BIVROST 360WebPlayer is a simple way to show 360 videos and pictures on your blog or website.
  * Version: 1.0
  * Author: Bivrost
@@ -17,7 +17,7 @@
  * Text Domain: bivrost-360webplayer
  * Domain Path: /lang/
  * License:     Custom opensource license
- * License URI: http://github.com/Bivrost/360WebPlayer/#License
+ * License URI:  https://gitlab.com/BIVROST/360WebPlayer/#License
  * Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
  * Requires at least: 4.2.0
  * Tested up to: 4.5

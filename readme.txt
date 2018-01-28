@@ -1,11 +1,11 @@
 === BIVROST 360WebPlayer for WordPress ===
-Contributors: chanibal
-Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality
-Requires at least: 4.2.0
-Tested up to: 4.9.2
-Requires PHP: 5.2
-Stable tag: trunk
-License: GPL v2
+Contributors: chanibal  
+Tags: video, 360, spherical, vr, panorama, embed, image, media, shortcode, virtual reality  
+Requires at least: 4.2.0  
+Tested up to: 4.9.2  
+Requires PHP: 5.2  
+Stable tag: trunk  
+License: GPL v2  
 
 The BIVROST 360WebPlayer for WordPress is the easiest way to stream 360 videos and pictures on your website or blog.
 
@@ -20,7 +20,7 @@ Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPl
 * Fast integration into any web site.
 * Easy to use for the end user.
 * Both desktop and mobile.
-* Free for personal use (see [license][license-free] for details).
+* Free for personal use (see license for details).
 * Works on all major browsers and systems.
 * Possible to embed more than one player on the same page.
 * Mono and stereoscopic video and pictures.
@@ -33,7 +33,7 @@ Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPl
 
 [bivrost]: http://bivrost360.com
 [webvr]: http://webvr.info/
-
+[player-windows]: https://download.bivrost360.com/player-desktop/
 
 
 = Visual Editor =
@@ -54,9 +54,9 @@ To edit your player, just click and press "edit" on top of it - just as you woul
 
 In text mode, there is a shortcode:
 
-`[bivrost-player loop="true"]
-my_vr_movie.mp4
-my_vr_movie.webm
+`[bivrost-player loop="true"]  
+my_vr_movie.mp4  
+my_vr_movie.webm  
 [/bivrost-player]`
 
 Put the picture or movie urls in the `[bivrost-player]` tag separated by newlines. For best results add both a webm/vp6 and a mp4/h264 version.
@@ -258,7 +258,6 @@ If you want to remove or replace our branding, are unsure about which license ap
 == Screenshots ==
 
 1. Installed player
-
 2. Configuration panel
 
 
@@ -279,7 +278,8 @@ The BIVROST 360WebPlayer for WordPress uses third party libraries:
 
 * [THREE.js][threejs] (MIT license)
 * [hls.js][hlsjs] (Apache 2.0 License)
-* [BIVROST 360 WebPlayer][github] (Custom open source license)
+* [BIVROST 360 WebPlayer][gitlab] (Custom open source license)
 
 [threejs]: http://threejs.org
 [hlsjs]: https://github.com/dailymotion/hls.js/
+[gitlab]: https://gitlab.com/BIVROST/360WebPlayer
