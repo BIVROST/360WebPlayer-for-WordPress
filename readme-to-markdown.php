@@ -12,6 +12,7 @@ $title = <<<END
 BIVROST 360WebPlayer for WordPress 
 ==================================
 
+![WordPress editor preview](screenshot-2.png)
 
 END;
 

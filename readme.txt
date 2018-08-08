@@ -12,7 +12,7 @@ The BIVROST 360WebPlayer for WordPress is the easiest way to stream 360 videos a
 
 == Description ==
 
-Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPlayer for WordPress Plugin.
+Embed 360° videos and pictures on your WordPress blog with the BIVROST 360WebPlayer for WordPress Plugin.
 
 = Features = 
 
@@ -26,10 +26,11 @@ Embed 360° videos and pictures on your Wordpress blog with the BIVROST 360WebPl
 * Mono and stereoscopic video and pictures.
 * HTTP Live Streaming (HLS).
 * Works well with touch.
-* Well tested and supports many edge cases.
+* Well tested - supports many edge cases.
 * [WebVR][webvr] support - works with Oculus Rift, Vive, Windows Mixed Reality, OSVR, GearVR, Google Cardboard and more.
-* Supports watching content in external native players ([by Bivrost][player-windows]).
-* We want to hear your feedback and ideas for new features, to make it even better.
+* Supports watching content in external native players ([by BIVROST][player-windows]).
+
+We want to hear your feedback and ideas for new features, to make it even better.
 
 [bivrost]: http://bivrost360.com
 [webvr]: http://webvr.info/
@@ -59,9 +60,10 @@ my_vr_movie.mp4
 my_vr_movie.webm  
 [/bivrost-player]`
 
-Put the picture or movie urls in the `[bivrost-player]` tag separated by newlines. For best results add both a webm/vp6 and a mp4/h264 version.
+Put the picture or movie urls in the `[bivrost-player]` tag separated by newlines. For the best result add both a webm/vp6 and a mp4/h264 version.
 
-You can configure the player using attributes in the shortcode. Below are your options, none of them are required.
+You can configure the player using attributes in the shortcode. Below you can find several options, none of them are required.
+
 
 
 = Available options =
@@ -149,7 +151,7 @@ Add the BIVROST 360WebPlayer for WordPress plugin using the built-in plugin inst
 
 After installation, you will have a new button in the WYSYWIG editor. There is a also a `[bivrost-player]` shortcode available.
 
-[download]: https://gitlab.com/BIVROST/360WebPlayer-for-WordPress/tags
+[download]: https://github.com/BIVROST/360WebPlayer-for-WordPress/tags
 
 == Frequently Asked Questions == 
 
@@ -224,9 +226,9 @@ Either your webserver doesn't support [Content-Range][content-range] or there ar
 
 = Where can I submit feature requests or bug reports? Where can I find the unminified version? =
 
-Please send bugs and feature requests to our [GitLab project][gitlab]. The sources are located there too. Thanks a lot in advance for any and all feedback.
+Please send bugs and feature requests to our [GitHub project][issues]. The sources are located there too. Thanks a lot in advance for any and all feedback.
 
-[gitlab]: http://gitlab.com/BIVROST/360WebPlayer
+[issues]: http://github.com/BIVROST/360WebPlayer-for-WordPress
 
 
 
@@ -236,7 +238,11 @@ Although browsers are the most accessible platforms, they are not all fully read
 
 The BIVROST 360WebPlayer has a button that allows online content to be run in a native player. This enhances performance and gives the user a better experience than viewing the content straight from the browser. If the user does not have the player yet, he or she can download it through a pop-up.
 
-The standalone player has less latency, better frame rates and supports VR headsets,
+The [BIVROST 360Player for Windows][player-windows] standalone player for Windows supports Oculus, HTC Vive, OSVR and Windows Mixed Reality (via SteamVR) VR headsets, has less latency, and better frame rates.
+
+We also have the BIVROST 360Player for Unity - a tool built on top of Unity that allows the user to create 360° video players for iOS, Android and GearVR.
+Please [contact sales at contact@bivrost360.com][email-sales] for more details.
+
 
 
 
@@ -252,8 +258,8 @@ The 360WebPlayer has two license options:
 If you want to remove or replace our branding, are unsure about which license applies to you, please [contact us for help and additional licensing options][email-sales].
 
 [email-sales]: mailto:contact@bivrost360.com
-[license-free]: https://gitlab.com/BIVROST/360WebPlayer/blob/master/LICENSE-free.md
-[license-paid]: https://gitlab.com/BIVROST/360WebPlayer/blob/master/LICENSE-commercial.md
+[license-free]: https://github.com/BIVROST/360WebPlayer/blob/master/LICENSE-free.md
+[license-paid]: https://github.com/BIVROST/360WebPlayer/blob/master/LICENSE-commercial.md
 
 
 
@@ -280,8 +286,8 @@ The BIVROST 360WebPlayer for WordPress uses third party libraries:
 
 * [THREE.js][threejs] (MIT license)
 * [hls.js][hlsjs] (Apache 2.0 License)
-* [BIVROST 360 WebPlayer][gitlab] (Custom open source license)
+* [BIVROST 360 WebPlayer][github-360WebPlayer] (Custom open source license)
 
 [threejs]: http://threejs.org
 [hlsjs]: https://github.com/dailymotion/hls.js/
-[gitlab]: https://gitlab.com/BIVROST/360WebPlayer
+[github-360WebPlayer]: https://github.com/BIVROST/360WebPlayer
