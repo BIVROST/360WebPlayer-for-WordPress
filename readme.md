@@ -143,7 +143,7 @@ Add the BIVROST 360WebPlayer for WordPress plugin using the built-in plugin inst
 
 After installation, you will have a new button in the WYSYWIG editor. There is a also a `[bivrost-player]` shortcode available.
 
-[download]: https://github.com/BIVROST/360WebPlayer-for-WordPress/tags
+[download]: https://github.com/BIVROST/360WebPlayer-for-WordPress/releases
 
 ## Frequently Asked Questions 
 
@@ -259,7 +259,7 @@ If you want to remove or replace our branding, are unsure about which license ap
 
 * 2016-04-15: Initial release 
 * 2018-01-28: Updated to WordPress 4.9
-
+* 2018-08-08: Move to GitHub, updated logo
 
 ## Upgrade Notice
 

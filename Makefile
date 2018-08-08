@@ -50,6 +50,7 @@ lang/bivrost-360webplayer-pl_PL.mo: lang/bivrost-360webplayer-pl_PL.po
 
 .PHONY: release
 release: bivrost-360webplayer.zip
+	mv bivrost-360webplayer.zip BIVROST360WebPlayer-for-Wordpress-$(shell git describe --exclude=current).zip
 
 bivrost-360webplayer.zip: $(artifacts)
 	7z a -tzip bivrost-360webplayer.zip $(artifacts)
