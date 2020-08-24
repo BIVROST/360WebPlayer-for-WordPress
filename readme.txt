@@ -155,73 +155,7 @@ After installation, you will have a new button in the WYSYWIG editor. There is a
 
 == Frequently Asked Questions == 
 
-= Available keyboard shortcuts =
-
-* ` ↑ ` ` → ` ` ↓ ` ` ← ` - look around.
-* ` space ` - pause/play.
-* ` F ` or double click player - full-screen.
-* ` V ` - enter/toggle VR mode.
- ` escape ` - exit full-screen/VR mode.
-* ` [ `, ` ] ` - scroll movie by 5 seconds, forwards or backwards.
-* ` + `, ` - ` - zoom in/out (not available in VR mode).
-
-
-= Virtual Reality on desktop and mobile with WebVR  =
-
-At the time of writing, WebVR is supported by Microsoft Edge, [Firefox Nightly][webvr-firefox], special [Windows builds of Chromium][webvr-chromium] and [Chrome Canary][webvr-chrome-canary], Google Chrome on Android with Cardboard (after enabling WebVR in `chrome://flags/#enable-webvr`) and [Samsung Internet Browser for Gear VR][webvr-samsung].
-
-When you have a supported platform, an headset button will be visible in 360WebPlayer - press it to enter VR.
-
-For more platform specific instructions look at the [WebVR][webvr] website.
-
-[webvr]: http://webvr.info/
-[webvr-firefox]: https://github.com/Web-VR/iswebvrready/wiki/Instructions%3A-Firefox-Nightly
-[webvr-chromium]: https://github.com/Web-VR/iswebvrready/wiki/Instructions%3A-Chromium
-[webvr-chrome-canary]: https://webvr.info/get-chrome/
-[webvr-chrome]: chrome://flags/#enable-webvr
-[webvr-samsung]: https://github.com/Web-VR/iswebvrready/wiki/Instructions%3A-Samsung-Internet-Browser-for-Gear-VR-on-Android
-
-
-= Virtual Reality on mobile with legacy Google Cardboard support =
-
-You can use the Bivrost 360WebPlayer with Google Cardboard and its many clones with a simple split screen. Just press the "headset" button to go to VR mode.
-
-Contrary to most players, you don't have to enable screen rotation for 360WebPlayer to work properly in cardboard mode. The phone can be in both landscape or portrait mode.
-
-Press back or "x" button to exit VR mode.
-
-Some tips:
-
-* If you have a NFC tag in your Cardboard we advice you to disable NFC in your phone as it might run the cardboard app and turn off your browser.
-* Not all phones have a gyroscope. If you have problems looking left and right, but up and down works, your phone does not have one. Instead your phone has a magnetometer, which does not work well with VR. Removing the magnet from the Cardboard improves the experience in this situation. Even if you have a gyroscope, many browsers ignore it (looking at you, recent Chrome). 
-* Consider setting a longer time for screen timeout.
-* If possible, use WebVR mode - it has far more accurate head movement and proper lens distortion.
-
-
-
-= Video does not work =
-
-Potential fixes:
-
-1. Check if your device supports this kind of video by playing it directly in the browser. Some popular devices support only up to 1920x1080 resolution.
-
-2. Videos or pictures have to be served from the same domain or provide [Cross-Origin Resource Sharing][cors] headers.
-
-Some browsers do not support CORS well, for example Safari - for them you have to serve the content from the same subdomain, port and protocol as the HTML.
-
-It is possible that with a CORS issue the audio will play, but the video will not. Check your web development console for details.
-
-[cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
-
-
-
-= Seeking does not work =
-
-Either your webserver doesn't support [Content-Range][content-range] or there are issues with the video file. Some web servers do not have Content-Range support, for example the PHP built-in web server.
-
-[content-range]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16
-
-
+For more information about player usage and configuration, please check out the main [BIVROST 360WebPlayer project][github-360WebPlayer].
 
 
 = Where can I submit feature requests or bug reports? Where can I find the unminified version? =
@@ -232,34 +166,14 @@ Please send bugs and feature requests to our [GitHub project][issues]. The sourc
 
 
 
-= Standalone players =
-
-Although browsers are the most accessible platforms, they are not all fully ready for VR - that is why we created a whole family of video players.
-
-The BIVROST 360WebPlayer has a button that allows online content to be run in a native player. This enhances performance and gives the user a better experience than viewing the content straight from the browser. If the user does not have the player yet, he or she can download it through a pop-up.
-
-The [BIVROST 360Player for Windows][player-windows] standalone player for Windows supports Oculus, HTC Vive, OSVR and Windows Mixed Reality (via SteamVR) VR headsets, has less latency, and better frame rates.
-
-We also have the BIVROST 360Player for Unity - a tool built on top of Unity that allows the user to create 360° video players for iOS, Android and GearVR.
-Please [contact sales at contact@bivrost360.com][email-sales] for more details.
-
-
-
-
 == License ==
 
-This WordPress plugin is a wrapper and configuration tool for the BIVROST 360WebPlayer.
+This WordPress plugin is a wrapper and configuration tool for the [BIVROST 360WebPlayer][github-360WebPlayer].
 
-The 360WebPlayer has two license options:
+For licensing options and to remove or replace our branding, please read the [BIVROST 360WebPlayer license][360WebPlayerLicense] or [contact us at contact@bivrost.pro][email-sales].
 
-1. [Free][license-free] - for non-commercial use
-2. [Paid][license-paid] - for commercial use. We issue one license per domain ([contact us here][email-sales] for yours).
-
-If you want to remove or replace our branding, are unsure about which license applies to you, please [contact us for help and additional licensing options][email-sales].
-
-[email-sales]: mailto:contact@bivrost360.com
-[license-free]: https://github.com/BIVROST/360WebPlayer/blob/master/LICENSE-free.md
-[license-paid]: https://github.com/BIVROST/360WebPlayer/blob/master/LICENSE-commercial.md
+[360WebPlayerLicense]: https://github.com/BIVROST/360WebPlayer/#License
+[email-sales]: mailto:contact@bivrost.pro
 
 
 
@@ -274,6 +188,7 @@ If you want to remove or replace our branding, are unsure about which license ap
 * 2016-04-15: Initial release 
 * 2018-01-28: Updated to WordPress 4.9
 * 2018-08-08: Move to GitHub, updated logo
+* 2020-08-24: Updated license
 
 == Upgrade Notice ==
 
